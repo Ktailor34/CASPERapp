@@ -1,0 +1,1129 @@
+import _frozen_importlib # frozen
+import _imp # builtin
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+# installing zipimport hook
+import 'zipimport' # <class '_frozen_importlib.BuiltinImporter'>
+# installed zipimport hook
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'posix' # <class '_frozen_importlib.BuiltinImporter'>
+import _thread # previously loaded ('_thread')
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import _weakref # previously loaded ('_weakref')
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+# zipimport: found 150 names in '/home/sai/Research/CASPERapp/dist/main/base_library.zip'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import codecs # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/codecs.pyc
+import encodings.aliases # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/encodings/aliases.pyc
+import encodings # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/encodings/__init__.pyc
+import encodings.utf_8 # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/encodings/utf_8.pyc
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+import encodings.latin_1 # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/encodings/latin_1.pyc
+import '_abc' # <class '_frozen_importlib.BuiltinImporter'>
+import abc # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/abc.pyc
+import io # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/io.pyc
+import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
+import _bootlocale # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/_bootlocale.pyc
+import '_struct' # <class '_frozen_importlib.BuiltinImporter'>
+import 'zlib' # <class '_frozen_importlib.BuiltinImporter'>
+# PyInstaller: FrozenImporter(/home/sai/Research/CASPERapp/dist/main/main?55991)
+import os # PyInstaller PYZ
+import stat # PyInstaller PYZ
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import posixpath # PyInstaller PYZ
+import genericpath # PyInstaller PYZ
+import 'genericpath' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'posixpath' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# _collections_abc not found in PYZ
+import _collections_abc # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/_collections_abc.pyc
+import 'os' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import ctypes # PyInstaller PYZ
+# _ctypes not found in PYZ
+# extension module '_ctypes' loaded from '/home/sai/Research/CASPERapp/dist/main/_ctypes.cpython-37m-x86_64-linux-gnu.so'
+# extension module '_ctypes' executed from '/home/sai/Research/CASPERapp/dist/main/_ctypes.cpython-37m-x86_64-linux-gnu.so'
+import '_ctypes' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffbd95240>
+import ctypes._endian # PyInstaller PYZ
+import 'ctypes._endian' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'ctypes' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources # PyInstaller PYZ
+import __future__ # PyInstaller PYZ
+import '__future__' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+# re not found in PYZ
+# enum not found in PYZ
+# types not found in PYZ
+import types # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/types.pyc
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import enum # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/enum.pyc
+# sre_compile not found in PYZ
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# sre_parse not found in PYZ
+# sre_constants not found in PYZ
+import sre_constants # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/sre_constants.pyc
+import sre_parse # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/sre_parse.pyc
+import sre_compile # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/sre_compile.pyc
+# functools not found in PYZ
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+# collections not found in PYZ
+# operator not found in PYZ
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import operator # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/operator.pyc
+# keyword not found in PYZ
+import keyword # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/keyword.pyc
+# heapq not found in PYZ
+import '_heapq' # <class '_frozen_importlib.BuiltinImporter'>
+import heapq # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/heapq.pyc
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# reprlib not found in PYZ
+import reprlib # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/reprlib.pyc
+import collections # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/collections/__init__.pyc
+import functools # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/functools.pyc
+# copyreg not found in PYZ
+import copyreg # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/copyreg.pyc
+import re # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/re.pyc
+import zipfile # PyInstaller PYZ
+import importlib # PyInstaller PYZ
+# warnings not found in PYZ
+import warnings # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/warnings.pyc
+import 'importlib' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import importlib.util # PyInstaller PYZ
+import importlib.abc # PyInstaller PYZ
+import importlib.machinery # PyInstaller PYZ
+import 'importlib.machinery' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'importlib.abc' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import contextlib # PyInstaller PYZ
+import 'contextlib' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'importlib.util' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import shutil # PyInstaller PYZ
+import fnmatch # PyInstaller PYZ
+import 'fnmatch' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
+import bz2 # PyInstaller PYZ
+import _compression # PyInstaller PYZ
+import '_compression' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import threading # PyInstaller PYZ
+# traceback not found in PYZ
+# linecache not found in PYZ
+import tokenize # PyInstaller PYZ
+import token # PyInstaller PYZ
+import 'token' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'tokenize' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import linecache # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/linecache.pyc
+import traceback # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/traceback.pyc
+# _weakrefset not found in PYZ
+import _weakrefset # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/_weakrefset.pyc
+import 'threading' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# _bz2 not found in PYZ
+# extension module '_bz2' loaded from '/home/sai/Research/CASPERapp/dist/main/_bz2.cpython-37m-x86_64-linux-gnu.so'
+# extension module '_bz2' executed from '/home/sai/Research/CASPERapp/dist/main/_bz2.cpython-37m-x86_64-linux-gnu.so'
+import '_bz2' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffbb96da0>
+import 'bz2' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import lzma # PyInstaller PYZ
+# _lzma not found in PYZ
+# extension module '_lzma' loaded from '/home/sai/Research/CASPERapp/dist/main/_lzma.cpython-37m-x86_64-linux-gnu.so'
+# extension module '_lzma' executed from '/home/sai/Research/CASPERapp/dist/main/_lzma.cpython-37m-x86_64-linux-gnu.so'
+import '_lzma' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffbba8668>
+import 'lzma' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pwd' # <class '_frozen_importlib.BuiltinImporter'>
+import 'grp' # <class '_frozen_importlib.BuiltinImporter'>
+import 'shutil' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'binascii' # <class '_frozen_importlib.BuiltinImporter'>
+import 'zipfile' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkgutil # PyInstaller PYZ
+# weakref not found in PYZ
+import weakref # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/weakref.pyc
+import 'pkgutil' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import platform # PyInstaller PYZ
+import subprocess # PyInstaller PYZ
+import signal # PyInstaller PYZ
+import 'signal' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import '_posixsubprocess' # <class '_frozen_importlib.BuiltinImporter'>
+import 'select' # <class '_frozen_importlib.BuiltinImporter'>
+import selectors # PyInstaller PYZ
+# collections.abc not found in PYZ
+import collections.abc # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/collections/abc.pyc
+import 'math' # <class '_frozen_importlib.BuiltinImporter'>
+import 'selectors' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'subprocess' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'platform' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import plistlib # PyInstaller PYZ
+import datetime # PyInstaller PYZ
+import '_datetime' # <class '_frozen_importlib.BuiltinImporter'>
+import 'datetime' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import xml # PyInstaller PYZ
+import 'xml' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import xml.parsers # PyInstaller PYZ
+import 'xml.parsers' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import xml.parsers.expat # PyInstaller PYZ
+import 'pyexpat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'xml.parsers.expat' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'plistlib' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email # PyInstaller PYZ
+import 'email' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email.parser # PyInstaller PYZ
+import email.feedparser # PyInstaller PYZ
+import email.errors # PyInstaller PYZ
+import 'email.errors' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email._policybase # PyInstaller PYZ
+import email.header # PyInstaller PYZ
+import email.quoprimime # PyInstaller PYZ
+import string # PyInstaller PYZ
+import '_string' # <class '_frozen_importlib.BuiltinImporter'>
+import 'string' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.quoprimime' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email.base64mime # PyInstaller PYZ
+import base64 # PyInstaller PYZ
+import 'base64' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.base64mime' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email.charset # PyInstaller PYZ
+import email.encoders # PyInstaller PYZ
+import quopri # PyInstaller PYZ
+import 'quopri' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.encoders' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.charset' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.header' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email.utils # PyInstaller PYZ
+import random # PyInstaller PYZ
+import hashlib # PyInstaller PYZ
+# _hashlib not found in PYZ
+# extension module '_hashlib' loaded from '/home/sai/Research/CASPERapp/dist/main/_hashlib.cpython-37m-x86_64-linux-gnu.so'
+# extension module '_hashlib' executed from '/home/sai/Research/CASPERapp/dist/main/_hashlib.cpython-37m-x86_64-linux-gnu.so'
+import '_hashlib' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffbac6780>
+import '_blake2' # <class '_frozen_importlib.BuiltinImporter'>
+import '_sha3' # <class '_frozen_importlib.BuiltinImporter'>
+import 'hashlib' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import bisect # PyInstaller PYZ
+import '_bisect' # <class '_frozen_importlib.BuiltinImporter'>
+import 'bisect' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import '_random' # <class '_frozen_importlib.BuiltinImporter'>
+import 'random' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import socket # PyInstaller PYZ
+import '_socket' # <class '_frozen_importlib.BuiltinImporter'>
+import 'socket' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import urllib # PyInstaller PYZ
+import 'urllib' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import urllib.parse # PyInstaller PYZ
+import 'urllib.parse' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import email._parseaddr # PyInstaller PYZ
+import calendar # PyInstaller PYZ
+# locale not found in PYZ
+import locale # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/locale.pyc
+import 'calendar' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email._parseaddr' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.utils' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email._policybase' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.feedparser' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'email.parser' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import tempfile # PyInstaller PYZ
+import 'tempfile' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import textwrap # PyInstaller PYZ
+import 'textwrap' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import inspect # PyInstaller PYZ
+import dis # PyInstaller PYZ
+import opcode # PyInstaller PYZ
+# _opcode not found in PYZ
+# extension module '_opcode' loaded from '/home/sai/Research/CASPERapp/dist/main/_opcode.cpython-37m-x86_64-linux-gnu.so'
+# extension module '_opcode' executed from '/home/sai/Research/CASPERapp/dist/main/_opcode.cpython-37m-x86_64-linux-gnu.so'
+import '_opcode' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffb728cc0>
+import 'opcode' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'dis' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'inspect' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import ntpath # PyInstaller PYZ
+# nt not found in PYZ
+# nt not found in PYZ
+# nt not found in PYZ
+import 'ntpath' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources.extern # PyInstaller PYZ
+import 'pkg_resources.extern' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources.extern.six not found in PYZ
+import pkg_resources._vendor # PyInstaller PYZ
+import 'pkg_resources._vendor' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources._vendor.six # PyInstaller PYZ
+import 'pkg_resources._vendor.six' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources.extern.six.moves not found in PYZ
+import pkg_resources._vendor.six # PyInstaller PYZ
+import 'pkg_resources._vendor.six' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources._vendor.six.moves not found in PYZ
+# pkg_resources._vendor.six.moves not found in PYZ
+# pkg_resources._vendor.six.moves.urllib not found in PYZ
+import pkg_resources.py31compat # PyInstaller PYZ
+import 'pkg_resources.py31compat' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources.extern.appdirs not found in PYZ
+import pkg_resources._vendor.appdirs # PyInstaller PYZ
+import 'pkg_resources._vendor.appdirs' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources.extern.packaging not found in PYZ
+import pkg_resources._vendor.packaging # PyInstaller PYZ
+import pkg_resources._vendor.packaging.__about__ # PyInstaller PYZ
+import 'pkg_resources._vendor.packaging.__about__' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources._vendor.packaging' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources._vendor.packaging.version as pkg_resources.extern.packaging.version # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+import pkg_resources._vendor.packaging._structures as pkg_resources.extern.packaging._structures # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+import 'pkg_resources.extern.packaging._structures' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources.extern.packaging.version' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources._vendor.packaging.specifiers as pkg_resources.extern.packaging.specifiers # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+import pkg_resources._vendor.packaging._compat as pkg_resources.extern.packaging._compat # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+import 'pkg_resources.extern.packaging._compat' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources.extern.packaging.specifiers' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pkg_resources._vendor.packaging.requirements as pkg_resources.extern.packaging.requirements # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+# pkg_resources.extern.pyparsing not found in PYZ
+import pkg_resources._vendor.pyparsing # PyInstaller PYZ
+import copy # PyInstaller PYZ
+# org not found in PYZ
+import 'copy' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import pprint # PyInstaller PYZ
+import 'pprint' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources._vendor.pyparsing' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# pkg_resources.extern.six.moves.urllib not found in PYZ
+import pkg_resources._vendor.packaging.markers as pkg_resources.extern.packaging.markers # PyInstaller PYZ (__path__ override: pkg_resources/_vendor/packaging)
+import 'pkg_resources.extern.packaging.markers' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources.extern.packaging.requirements' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import sysconfig # PyInstaller PYZ
+import 'sysconfig' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'pkg_resources' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import multiprocessing # PyInstaller PYZ
+import multiprocessing.context # PyInstaller PYZ
+import multiprocessing.process # PyInstaller PYZ
+import 'multiprocessing.process' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import multiprocessing.reduction # PyInstaller PYZ
+import pickle # PyInstaller PYZ
+import _compat_pickle # PyInstaller PYZ
+import '_compat_pickle' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# org not found in PYZ
+import '_pickle' # <class '_frozen_importlib.BuiltinImporter'>
+import 'pickle' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'array' # <class '_frozen_importlib.BuiltinImporter'>
+import 'multiprocessing.reduction' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'multiprocessing.context' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'multiprocessing' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import multiprocessing.spawn # PyInstaller PYZ
+import runpy # PyInstaller PYZ
+import 'runpy' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import multiprocessing.util # PyInstaller PYZ
+import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
+import 'multiprocessing.util' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'multiprocessing.spawn' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import multiprocessing.popen_fork # PyInstaller PYZ
+import 'multiprocessing.popen_fork' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5 # PyInstaller PYZ
+import 'PyQt5' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+# PyQt5.QtWidgets not found in PYZ
+# PyQt5.sip not found in PYZ
+# extension module 'PyQt5.sip' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/sip.so'
+# extension module 'PyQt5.sip' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/sip.so'
+import 'PyQt5.sip' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffb51dfd0>
+# PyQt5.QtCore not found in PYZ
+# extension module 'PyQt5.QtCore' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtCore.so'
+# extension module 'PyQt5.QtCore' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtCore.so'
+import 'PyQt5.QtCore' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffb5273c8>
+# PyQt5.QtGui not found in PYZ
+# extension module 'PyQt5.QtGui' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtGui.so'
+# extension module 'PyQt5.QtGui' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtGui.so'
+import 'PyQt5.QtGui' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff618bac8>
+# extension module 'PyQt5.QtWidgets' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWidgets.so'
+# extension module 'PyQt5.QtWidgets' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWidgets.so'
+import 'PyQt5.QtWidgets' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faffb51de10>
+# PyQt5.Qt not found in PYZ
+# PyQt5.QtDBus not found in PYZ
+# extension module 'PyQt5.QtDBus' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtDBus.so'
+# extension module 'PyQt5.QtDBus' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtDBus.so'
+import 'PyQt5.QtDBus' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff5b70940>
+# PyQt5.QtNetwork not found in PYZ
+# extension module 'PyQt5.QtNetwork' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNetwork.so'
+# extension module 'PyQt5.QtNetwork' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNetwork.so'
+import 'PyQt5.QtNetwork' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff5b70e48>
+# PyQt5.QtNetworkAuth not found in PYZ
+# extension module 'PyQt5.QtNetworkAuth' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNetworkAuth.so'
+# extension module 'PyQt5.QtNetworkAuth' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNetworkAuth.so'
+import 'PyQt5.QtNetworkAuth' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff5b81da0>
+# PyQt5.QtSensors not found in PYZ
+# extension module 'PyQt5.QtSensors' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSensors.so'
+# extension module 'PyQt5.QtSensors' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSensors.so'
+import 'PyQt5.QtSensors' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff5b9e438>
+# PyQt5.QtSerialPort not found in PYZ
+# extension module 'PyQt5.QtSerialPort' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSerialPort.so'
+# extension module 'PyQt5.QtSerialPort' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSerialPort.so'
+import 'PyQt5.QtSerialPort' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42bc2e8>
+# PyQt5.QtMultimedia not found in PYZ
+# extension module 'PyQt5.QtMultimedia' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtMultimedia.so'
+# extension module 'PyQt5.QtMultimedia' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtMultimedia.so'
+import 'PyQt5.QtMultimedia' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42bc4a8>
+# PyQt5.QtQml not found in PYZ
+# extension module 'PyQt5.QtQml' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQml.so'
+# extension module 'PyQt5.QtQml' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQml.so'
+import 'PyQt5.QtQml' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42d46a0>
+# PyQt5.QtXml not found in PYZ
+# extension module 'PyQt5.QtXml' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtXml.so'
+# extension module 'PyQt5.QtXml' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtXml.so'
+import 'PyQt5.QtXml' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42d4e48>
+# PyQt5.QtXmlPatterns not found in PYZ
+# extension module 'PyQt5.QtXmlPatterns' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtXmlPatterns.so'
+# extension module 'PyQt5.QtXmlPatterns' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtXmlPatterns.so'
+import 'PyQt5.QtXmlPatterns' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42ed5c0>
+# PyQt5.QtDesigner not found in PYZ
+# extension module 'PyQt5.QtDesigner' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtDesigner.so'
+# extension module 'PyQt5.QtDesigner' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtDesigner.so'
+import 'PyQt5.QtDesigner' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42ed9e8>
+# PyQt5.QtHelp not found in PYZ
+# extension module 'PyQt5.QtHelp' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtHelp.so'
+# extension module 'PyQt5.QtHelp' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtHelp.so'
+import 'PyQt5.QtHelp' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff42edf60>
+# PyQt5.QtMultimediaWidgets not found in PYZ
+# extension module 'PyQt5.QtMultimediaWidgets' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtMultimediaWidgets.so'
+# extension module 'PyQt5.QtMultimediaWidgets' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtMultimediaWidgets.so'
+import 'PyQt5.QtMultimediaWidgets' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19b62e8>
+# PyQt5.QtOpenGL not found in PYZ
+# extension module 'PyQt5.QtOpenGL' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtOpenGL.so'
+# extension module 'PyQt5.QtOpenGL' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtOpenGL.so'
+import 'PyQt5.QtOpenGL' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19b63c8>
+# PyQt5.QtPrintSupport not found in PYZ
+# extension module 'PyQt5.QtPrintSupport' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtPrintSupport.so'
+# extension module 'PyQt5.QtPrintSupport' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtPrintSupport.so'
+import 'PyQt5.QtPrintSupport' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19b6588>
+# PyQt5.QtQuick not found in PYZ
+# extension module 'PyQt5.QtQuick' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQuick.so'
+# extension module 'PyQt5.QtQuick' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQuick.so'
+import 'PyQt5.QtQuick' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19b6898>
+# PyQt5.QtSql not found in PYZ
+# extension module 'PyQt5.QtSql' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSql.so'
+# extension module 'PyQt5.QtSql' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSql.so'
+import 'PyQt5.QtSql' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19cf860>
+# PyQt5.QtSvg not found in PYZ
+# extension module 'PyQt5.QtSvg' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSvg.so'
+# extension module 'PyQt5.QtSvg' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtSvg.so'
+import 'PyQt5.QtSvg' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19cfc50>
+# PyQt5.QtTest not found in PYZ
+# extension module 'PyQt5.QtTest' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtTest.so'
+# extension module 'PyQt5.QtTest' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtTest.so'
+import 'PyQt5.QtTest' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19cfe10>
+# PyQt5.QtBluetooth not found in PYZ
+# extension module 'PyQt5.QtBluetooth' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtBluetooth.so'
+# extension module 'PyQt5.QtBluetooth' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtBluetooth.so'
+import 'PyQt5.QtBluetooth' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19ea048>
+# PyQt5.QtPositioning not found in PYZ
+# extension module 'PyQt5.QtPositioning' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtPositioning.so'
+# extension module 'PyQt5.QtPositioning' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtPositioning.so'
+import 'PyQt5.QtPositioning' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19ea630>
+# PyQt5.QtX11Extras not found in PYZ
+# extension module 'PyQt5.QtX11Extras' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtX11Extras.so'
+# extension module 'PyQt5.QtX11Extras' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtX11Extras.so'
+import 'PyQt5.QtX11Extras' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19ea940>
+# PyQt5.QtQuickWidgets not found in PYZ
+# extension module 'PyQt5.QtQuickWidgets' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQuickWidgets.so'
+# extension module 'PyQt5.QtQuickWidgets' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtQuickWidgets.so'
+import 'PyQt5.QtQuickWidgets' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19eaac8>
+# PyQt5.QtWebSockets not found in PYZ
+# extension module 'PyQt5.QtWebSockets' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWebSockets.so'
+# extension module 'PyQt5.QtWebSockets' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWebSockets.so'
+import 'PyQt5.QtWebSockets' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19eabe0>
+# PyQt5.QtWebChannel not found in PYZ
+# extension module 'PyQt5.QtWebChannel' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWebChannel.so'
+# extension module 'PyQt5.QtWebChannel' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtWebChannel.so'
+import 'PyQt5.QtWebChannel' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19eadd8>
+# PyQt5.QtLocation not found in PYZ
+# extension module 'PyQt5.QtLocation' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtLocation.so'
+# extension module 'PyQt5.QtLocation' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtLocation.so'
+import 'PyQt5.QtLocation' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff19eaef0>
+# PyQt5.QtNfc not found in PYZ
+# extension module 'PyQt5.QtNfc' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNfc.so'
+# extension module 'PyQt5.QtNfc' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtNfc.so'
+import 'PyQt5.QtNfc' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7fafedf67cf8>
+# PyQt5.QtRemoteObjects not found in PYZ
+# extension module 'PyQt5.QtRemoteObjects' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtRemoteObjects.so'
+# extension module 'PyQt5.QtRemoteObjects' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/QtRemoteObjects.so'
+import 'PyQt5.QtRemoteObjects' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7fafedf7b320>
+# extension module 'PyQt5.Qt' loaded from '/home/sai/Research/CASPERapp/dist/main/PyQt5/Qt.so'
+# extension module 'PyQt5.Qt' executed from '/home/sai/Research/CASPERapp/dist/main/PyQt5/Qt.so'
+import 'PyQt5.Qt' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7faff5b707b8>
+import PyQt5.uic # PyInstaller PYZ
+import PyQt5.uic.Compiler # PyInstaller PYZ
+import 'PyQt5.uic.Compiler' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.Compiler.indenter # PyInstaller PYZ
+import 'PyQt5.uic.Compiler.indenter' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.Compiler.compiler # PyInstaller PYZ
+import PyQt5.uic.properties # PyInstaller PYZ
+import logging # PyInstaller PYZ
+import 'logging' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.exceptions # PyInstaller PYZ
+import 'PyQt5.uic.exceptions' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.icon_cache # PyInstaller PYZ
+import 'PyQt5.uic.icon_cache' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.port_v3 # PyInstaller PYZ
+import 'PyQt5.uic.port_v3' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.port_v3.ascii_upper # PyInstaller PYZ
+import 'PyQt5.uic.port_v3.ascii_upper' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic.properties' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.uiparser # PyInstaller PYZ
+import xml.etree # PyInstaller PYZ
+import 'xml.etree' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import xml.etree.ElementTree # PyInstaller PYZ
+import xml.etree.ElementPath # PyInstaller PYZ
+import 'xml.etree.ElementPath' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import '_elementtree' # <class '_frozen_importlib.BuiltinImporter'>
+import 'xml.etree.ElementTree' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.objcreator # PyInstaller PYZ
+import 'PyQt5.uic.objcreator' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic.uiparser' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.Compiler.qtproxies # PyInstaller PYZ
+import PyQt5.uic.Compiler.misc # PyInstaller PYZ
+import 'PyQt5.uic.Compiler.misc' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.port_v3.proxy_base # PyInstaller PYZ
+import PyQt5.uic.Compiler.proxy_metaclass # PyInstaller PYZ
+import 'PyQt5.uic.Compiler.proxy_metaclass' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic.port_v3.proxy_base' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import PyQt5.uic.port_v3.as_string # PyInstaller PYZ
+import 'PyQt5.uic.port_v3.as_string' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic.Compiler.qtproxies' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>[18587] Failed to execute script main
+
+import PyQt5.uic.Compiler.qobjectcreator # PyInstaller PYZ
+import 'PyQt5.uic.Compiler.qobjectcreator' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic.Compiler.compiler' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import 'PyQt5.uic' # <pyimod03_importers.FrozenImporter object at 0x7faffbe77748>
+import APIs # PyInstaller PYZ
+import bioservices # PyInstaller PYZ
+import easydev # PyInstaller PYZ
+# encodings.cp437 not found in PYZ
+import encodings.cp437 # loaded from Zip /home/sai/Research/CASPERapp/dist/main/base_library.zip/encodings/cp437.pyc
+Traceback (most recent call last):
+  File "main.py", line 5, in <module>
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "/home/sai/.local/lib/python3.7/site-packages/PyInstaller/loader/pyimod03_importers.py", line 627, in exec_module
+    exec(bytecode, module.__dict__)
+  File "APIs.py", line 3, in <module>
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "/home/sai/.local/lib/python3.7/site-packages/PyInstaller/loader/pyimod03_importers.py", line 627, in exec_module
+    exec(bytecode, module.__dict__)
+  File "bioservices/__init__.py", line 18, in <module>
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "/home/sai/.local/lib/python3.7/site-packages/PyInstaller/loader/pyimod03_importers.py", line 627, in exec_module
+    exec(bytecode, module.__dict__)
+  File "easydev/__init__.py", line 30, in <module>
+  File "pkg_resources/__init__.py", line 900, in require
+  File "pkg_resources/__init__.py", line 786, in resolve
+pkg_resources.DistributionNotFound: The 'easydev' distribution was not found and is required by the application
+# clear builtins._
+# clear sys.path
+# clear sys.argv
+# clear sys.ps1
+# clear sys.ps2
+# clear sys.last_type
+# clear sys.last_value
+# clear sys.last_traceback
+# destroy easydev
+# destroy bioservices
+# destroy APIs
+# clear sys.path_hooks
+# clear sys.path_importer_cache
+# clear sys.meta_path
+# clear sys.__interactivehook__
+# clear sys.flags
+# clear sys.float_info
+# restore sys.stdin
+# restore sys.stdout
+# restore sys.stderr
+# cleanup[2] removing sys
+# cleanup[2] removing builtins
+# cleanup[2] removing _frozen_importlib
+# cleanup[2] removing _imp
+# cleanup[2] removing _thread
+# cleanup[2] removing _warnings
+# cleanup[2] removing _weakref
+# cleanup[2] removing zipimport
+# cleanup[2] removing _frozen_importlib_external
+# cleanup[2] removing _io
+# cleanup[2] removing marshal
+# cleanup[2] removing posix
+# cleanup[2] removing encodings
+# cleanup[2] removing codecs
+# cleanup[2] removing _codecs
+# cleanup[2] removing encodings.aliases
+# cleanup[2] removing encodings.utf_8
+# cleanup[2] removing _signal
+# cleanup[2] removing __main__
+# cleanup[2] removing encodings.latin_1
+# cleanup[2] removing io
+# cleanup[2] removing abc
+# cleanup[2] removing _abc
+# cleanup[2] removing _bootlocale
+# destroy _bootlocale
+# cleanup[2] removing _locale
+# cleanup[2] removing struct
+# cleanup[2] removing _struct
+# cleanup[2] removing pyimod01_os_path
+# cleanup[2] removing pyimod02_archive
+# cleanup[2] removing zlib
+# cleanup[2] removing pyimod03_importers
+# cleanup[2] removing os
+# cleanup[2] removing stat
+# cleanup[2] removing _stat
+# cleanup[2] removing posixpath
+# cleanup[2] removing genericpath
+# cleanup[2] removing os.path
+# cleanup[2] removing _collections_abc
+# cleanup[2] removing ctypes
+# cleanup[2] removing _ctypes
+# cleanup[2] removing ctypes._endian
+# cleanup[2] removing pkg_resources
+# cleanup[2] removing __future__
+# destroy __future__
+# cleanup[2] removing time
+# cleanup[2] removing re
+# cleanup[2] removing enum
+# cleanup[2] removing types
+# cleanup[2] removing _collections
+# cleanup[2] removing sre_compile
+# cleanup[2] removing _sre
+# cleanup[2] removing sre_parse
+# cleanup[2] removing sre_constants
+# cleanup[2] removing functools
+# cleanup[2] removing _functools
+# cleanup[2] removing collections
+# cleanup[2] removing operator
+# cleanup[2] removing _operator
+# cleanup[2] removing keyword
+# destroy keyword
+# cleanup[2] removing heapq
+# cleanup[2] removing _heapq
+# cleanup[2] removing itertools
+# cleanup[2] removing reprlib
+# destroy reprlib
+# cleanup[2] removing copyreg
+# cleanup[2] removing zipfile
+# cleanup[2] removing importlib
+# cleanup[2] removing importlib._bootstrap
+# cleanup[2] removing importlib._bootstrap_external
+# cleanup[2] removing warnings
+# cleanup[2] removing importlib.util
+# cleanup[2] removing importlib.abc
+# cleanup[2] removing importlib.machinery
+# cleanup[2] removing contextlib
+# cleanup[2] removing shutil
+# cleanup[2] removing fnmatch
+# cleanup[2] removing errno
+# cleanup[2] removing bz2
+# cleanup[2] removing _compression
+# cleanup[2] removing threading
+# cleanup[2] removing traceback
+# cleanup[2] removing linecache
+# cleanup[2] removing tokenize
+# cleanup[2] removing token
+# cleanup[2] removing _weakrefset
+# destroy _weakrefset
+# cleanup[2] removing _bz2
+# cleanup[2] removing lzma
+# cleanup[2] removing _lzma
+# cleanup[2] removing pwd
+# cleanup[2] removing grp
+# cleanup[2] removing binascii
+# cleanup[2] removing pkgutil
+# cleanup[2] removing weakref
+# cleanup[2] removing platform
+# cleanup[2] removing subprocess
+# cleanup[2] removing signal
+# cleanup[2] removing _posixsubprocess
+# cleanup[2] removing select
+# cleanup[2] removing selectors
+# cleanup[2] removing collections.abc
+# cleanup[2] removing math
+# cleanup[2] removing plistlib
+# cleanup[2] removing datetime
+# cleanup[2] removing _datetime
+# cleanup[2] removing xml
+# destroy xml
+# cleanup[2] removing xml.parsers
+# destroy xml.parsers
+# cleanup[2] removing xml.parsers.expat
+# destroy xml.parsers.expat
+# cleanup[2] removing pyexpat.errors
+# cleanup[2] removing pyexpat.model
+# cleanup[2] removing pyexpat
+# cleanup[2] removing xml.parsers.expat.model
+# cleanup[2] removing xml.parsers.expat.errors
+# cleanup[2] removing email
+# cleanup[2] removing email.parser
+# cleanup[2] removing email.feedparser
+# cleanup[2] removing email.errors
+# cleanup[2] removing email._policybase
+# cleanup[2] removing email.header
+# cleanup[2] removing email.quoprimime
+# cleanup[2] removing string
+# cleanup[2] removing _string
+# cleanup[2] removing email.base64mime
+# cleanup[2] removing base64
+# destroy base64
+# cleanup[2] removing email.charset
+# cleanup[2] removing email.encoders
+# cleanup[2] removing quopri
+# destroy quopri
+# cleanup[2] removing email.utils
+# cleanup[2] removing random
+# cleanup[2] removing hashlib
+# destroy hashlib
+# cleanup[2] removing _hashlib
+# cleanup[2] removing _blake2
+# cleanup[2] removing _sha3
+# cleanup[2] removing bisect
+# cleanup[2] removing _bisect
+# cleanup[2] removing _random
+# cleanup[2] removing socket
+# cleanup[2] removing _socket
+# cleanup[2] removing urllib
+# cleanup[2] removing urllib.parse
+# cleanup[2] removing email._parseaddr
+# cleanup[2] removing calendar
+# cleanup[2] removing locale
+# cleanup[2] removing tempfile
+# cleanup[2] removing textwrap
+# cleanup[2] removing inspect
+# cleanup[2] removing dis
+# cleanup[2] removing opcode
+# destroy opcode
+# cleanup[2] removing _opcode
+# cleanup[2] removing ntpath
+# cleanup[2] removing pkg_resources.extern
+# cleanup[2] removing pkg_resources._vendor
+# cleanup[2] removing pkg_resources.extern.six
+# cleanup[2] removing pkg_resources._vendor.six
+# cleanup[2] removing pkg_resources.extern.six.moves
+# cleanup[2] removing pkg_resources._vendor.six.moves
+# cleanup[2] removing pkg_resources.py31compat
+# cleanup[2] removing pkg_resources.extern.appdirs
+# cleanup[2] removing pkg_resources._vendor.packaging.__about__
+# cleanup[2] removing pkg_resources.extern.packaging
+# cleanup[2] removing pkg_resources.extern.packaging.version
+# cleanup[2] removing pkg_resources.extern.packaging._structures
+# cleanup[2] removing pkg_resources.extern.packaging.specifiers
+# cleanup[2] removing pkg_resources.extern.packaging._compat
+# cleanup[2] removing pkg_resources.extern.packaging.requirements
+# cleanup[2] removing copy
+# cleanup[2] removing pprint
+# cleanup[2] removing pkg_resources.extern.pyparsing
+# cleanup[2] removing pkg_resources.extern.six.moves.urllib
+# cleanup[2] removing pkg_resources.extern.packaging.markers
+# cleanup[2] removing sysconfig
+# destroy sysconfig
+# cleanup[2] removing multiprocessing
+# cleanup[2] removing multiprocessing.context
+# cleanup[2] removing multiprocessing.process
+# cleanup[2] removing multiprocessing.reduction
+# cleanup[2] removing pickle
+# cleanup[2] removing _compat_pickle
+# cleanup[2] removing _pickle
+# cleanup[2] removing array
+# cleanup[2] removing __mp_main__
+# destroy __main__
+# cleanup[2] removing multiprocessing.spawn
+# cleanup[2] removing runpy
+# cleanup[2] removing multiprocessing.util
+# cleanup[2] removing atexit
+# cleanup[2] removing multiprocessing.popen_fork
+# cleanup[2] removing PyQt5
+# destroy PyQt5
+# cleanup[2] removing sip
+# cleanup[2] removing PyQt5.sip
+# cleanup[2] removing PyQt5.QtCore
+# cleanup[2] removing PyQt5.QtGui
+# cleanup[2] removing PyQt5.QtWidgets
+# cleanup[2] removing PyQt5.QtDBus
+# cleanup[2] removing PyQt5.QtNetwork
+# cleanup[2] removing PyQt5.QtNetworkAuth
+# cleanup[2] removing PyQt5.QtSensors
+# cleanup[2] removing PyQt5.QtSerialPort
+# cleanup[2] removing PyQt5.QtMultimedia
+# cleanup[2] removing PyQt5.QtQml
+# cleanup[2] removing PyQt5.QtXml
+# cleanup[2] removing PyQt5.QtXmlPatterns
+# cleanup[2] removing PyQt5.QtDesigner
+# cleanup[2] removing PyQt5.QtHelp
+# cleanup[2] removing PyQt5.QtMultimediaWidgets
+# cleanup[2] removing PyQt5.QtOpenGL
+# cleanup[2] removing PyQt5.QtPrintSupport
+# cleanup[2] removing PyQt5.QtQuick
+# cleanup[2] removing PyQt5.QtSql
+# cleanup[2] removing PyQt5.QtSvg
+# cleanup[2] removing PyQt5.QtTest
+# cleanup[2] removing PyQt5.QtBluetooth
+# cleanup[2] removing PyQt5.QtPositioning
+# cleanup[2] removing PyQt5.QtX11Extras
+# cleanup[2] removing PyQt5.QtQuickWidgets
+# cleanup[2] removing PyQt5.QtWebSockets
+# cleanup[2] removing PyQt5.QtWebChannel
+# cleanup[2] removing PyQt5.QtLocation
+# cleanup[2] removing PyQt5.QtNfc
+# cleanup[2] removing PyQt5.QtRemoteObjects
+# cleanup[2] removing PyQt5.Qt
+# cleanup[2] removing PyQt5.uic
+# cleanup[2] removing PyQt5.uic.Compiler
+# cleanup[2] removing PyQt5.uic.Compiler.indenter
+# cleanup[2] removing PyQt5.uic.Compiler.compiler
+# cleanup[2] removing PyQt5.uic.properties
+# cleanup[2] removing logging
+# cleanup[2] removing PyQt5.uic.exceptions
+# cleanup[2] removing PyQt5.uic.icon_cache
+# cleanup[2] removing PyQt5.uic.port_v3
+# cleanup[2] removing PyQt5.uic.port_v3.ascii_upper
+# cleanup[2] removing PyQt5.uic.uiparser
+# cleanup[2] removing xml.etree
+# destroy xml.etree
+# cleanup[2] removing xml.etree.ElementTree
+# destroy xml.etree.ElementTree
+# cleanup[2] removing xml.etree.ElementPath
+# cleanup[2] removing _elementtree
+# cleanup[2] removing PyQt5.uic.objcreator
+# cleanup[2] removing PyQt5.uic.Compiler.qtproxies
+# cleanup[2] removing PyQt5.uic.Compiler.misc
+# cleanup[2] removing PyQt5.uic.port_v3.proxy_base
+# cleanup[2] removing PyQt5.uic.Compiler.proxy_metaclass
+# cleanup[2] removing PyQt5.uic.port_v3.as_string
+# cleanup[2] removing PyQt5.uic.Compiler.qobjectcreator
+# cleanup[2] removing encodings.cp437
+# destroy PyQt5.QtRemoteObjects
+# destroy PyQt5.QtNfc
+# destroy PyQt5.QtLocation
+# destroy PyQt5.QtWebChannel
+# destroy PyQt5.QtWebSockets
+# destroy PyQt5.QtQuickWidgets
+# destroy PyQt5.QtX11Extras
+# destroy PyQt5.QtBluetooth
+# destroy PyQt5.QtTest
+# destroy PyQt5.QtSvg
+# destroy PyQt5.QtSql
+# destroy PyQt5.QtPrintSupport
+# destroy PyQt5.QtOpenGL
+# destroy PyQt5.QtMultimediaWidgets
+# destroy PyQt5.QtHelp
+# destroy PyQt5.QtDesigner
+# destroy PyQt5.QtXmlPatterns
+# destroy PyQt5.QtXml
+# destroy PyQt5.QtSerialPort
+# destroy PyQt5.QtSensors
+# destroy PyQt5.QtNetworkAuth
+# destroy PyQt5.QtDBus
+# destroy _sha3
+# destroy _blake2
+# destroy _datetime
+# destroy _bz2
+# destroy PyQt5.sip
+# cleanup[3] wiping _frozen_importlib
+# cleanup[3] wiping _imp
+# cleanup[3] wiping _thread
+# cleanup[3] wiping _warnings
+# cleanup[3] wiping _weakref
+# cleanup[3] wiping zipimport
+# cleanup[3] wiping _frozen_importlib_external
+# cleanup[3] wiping _io
+# cleanup[3] wiping marshal
+# cleanup[3] wiping posix
+# cleanup[3] wiping encodings
+# destroy encodings.aliases
+# destroy encodings.utf_8
+# destroy encodings.latin_1
+# destroy encodings.cp437
+# cleanup[3] wiping codecs
+# cleanup[3] wiping _codecs
+# cleanup[3] wiping _signal
+# cleanup[3] wiping io
+# cleanup[3] wiping abc
+# cleanup[3] wiping _abc
+# cleanup[3] wiping _locale
+# cleanup[3] wiping struct
+# cleanup[3] wiping _struct
+# cleanup[3] wiping pyimod01_os_path
+# cleanup[3] wiping pyimod02_archive
+# cleanup[3] wiping zlib
+# cleanup[3] wiping pyimod03_importers
+# cleanup[3] wiping os
+# cleanup[3] wiping stat
+# cleanup[3] wiping _stat
+# destroy _stat
+# cleanup[3] wiping posixpath
+# cleanup[3] wiping genericpath
+# cleanup[3] wiping os.path
+# cleanup[3] wiping _collections_abc
+# cleanup[3] wiping ctypes
+# destroy ctypes._endian
+# cleanup[3] wiping _ctypes
+# cleanup[3] wiping pkg_resources
+# destroy pkg_resources._vendor
+# destroy pkg_resources._vendor.six
+# destroy zipfile
+# destroy pkgutil
+# destroy plistlib
+# destroy tempfile
+# destroy textwrap
+# destroy inspect
+# destroy ntpath
+# destroy pkg_resources.extern
+# destroy pkg_resources.py31compat
+# cleanup[3] wiping time
+# cleanup[3] wiping re
+# destroy sre_compile
+# cleanup[3] wiping enum
+# cleanup[3] wiping types
+# cleanup[3] wiping _collections
+# cleanup[3] wiping _sre
+# cleanup[3] wiping sre_parse
+# cleanup[3] wiping sre_constants
+# cleanup[3] wiping functools
+# destroy _abc
+# cleanup[3] wiping _functools
+# destroy _functools
+# cleanup[3] wiping collections
+# destroy heapq
+# destroy _collections
+# destroy collections.abc
+# cleanup[3] wiping operator
+# cleanup[3] wiping _operator
+# cleanup[3] wiping _heapq
+# cleanup[3] wiping itertools
+# cleanup[3] wiping copyreg
+# cleanup[3] wiping importlib
+# destroy importlib.util
+# cleanup[3] wiping importlib._bootstrap
+# cleanup[3] wiping importlib._bootstrap_external
+# cleanup[3] wiping warnings
+# cleanup[3] wiping importlib.abc
+# destroy _frozen_importlib_external
+# destroy importlib.machinery
+# cleanup[3] wiping contextlib
+# cleanup[3] wiping shutil
+# destroy fnmatch
+# cleanup[3] wiping errno
+# cleanup[3] wiping bz2
+# cleanup[3] wiping _compression
+# cleanup[3] wiping threading
+# cleanup[3] wiping traceback
+# cleanup[3] wiping linecache
+# cleanup[3] wiping tokenize
+# destroy io
+# cleanup[3] wiping token
+# cleanup[3] wiping lzma
+# destroy _compression
+# cleanup[3] wiping _lzma
+# destroy _lzma
+# cleanup[3] wiping pwd
+# destroy pwd
+# cleanup[3] wiping grp
+# destroy grp
+# cleanup[3] wiping binascii
+# cleanup[3] wiping weakref
+# cleanup[3] wiping platform
+# destroy subprocess
+# cleanup[3] wiping signal
+# destroy _signal
+# cleanup[3] wiping _posixsubprocess
+# cleanup[3] wiping select
+# cleanup[3] wiping selectors
+# cleanup[3] wiping math
+# cleanup[3] wiping datetime
+# cleanup[3] wiping pyexpat.errors
+# cleanup[3] wiping pyexpat.model
+# cleanup[3] wiping pyexpat
+# destroy pyexpat.errors
+# destroy pyexpat.model
+# cleanup[3] wiping email
+# destroy email._parseaddr
+# destroy email._policybase
+# destroy email.quoprimime
+# destroy email.base64mime
+# destroy email.encoders
+# destroy email.utils
+# destroy email.feedparser
+# destroy email.parser
+# cleanup[3] wiping email.errors
+# cleanup[3] wiping email.header
+# cleanup[3] wiping string
+# cleanup[3] wiping _string
+# destroy _string
+# cleanup[3] wiping email.charset
+# destroy email
+# cleanup[3] wiping random
+# destroy math
+# destroy bisect
+# destroy _random
+# cleanup[3] wiping _hashlib
+# destroy _hashlib
+# cleanup[3] wiping _bisect
+# destroy _bisect
+# cleanup[3] wiping socket
+# cleanup[3] wiping _socket
+# destroy _socket
+# cleanup[3] wiping urllib
+# destroy urllib.parse
+# cleanup[3] wiping calendar
+# destroy locale
+# cleanup[3] wiping dis
+# cleanup[3] wiping _opcode
+# destroy _opcode
+# cleanup[3] wiping pkg_resources.extern.six
+# destroy pkg_resources._vendor.six.moves.urllib
+# destroy pkg_resources._vendor.six.moves
+# cleanup[3] wiping pkg_resources.extern.six.moves
+# cleanup[3] wiping pkg_resources._vendor.six.moves
+# cleanup[3] wiping pkg_resources.extern.appdirs
+# cleanup[3] wiping pkg_resources._vendor.packaging.__about__
+# cleanup[3] wiping pkg_resources.extern.packaging
+# destroy pkg_resources.extern.packaging._structures
+# destroy pkg_resources.extern.packaging._compat
+# destroy pkg_resources._vendor.packaging.__about__
+# destroy pkg_resources.extern.packaging.version
+# destroy pkg_resources.extern.packaging.specifiers
+# destroy pkg_resources.extern.packaging.markers
+# destroy pkg_resources.extern.packaging.requirements
+# cleanup[3] wiping copy
+# cleanup[3] wiping pprint
+# cleanup[3] wiping pkg_resources.extern.pyparsing
+# destroy copy
+# destroy sre_constants
+# destroy pprint
+# cleanup[3] wiping pkg_resources.extern.six.moves.urllib
+# cleanup[3] wiping multiprocessing
+# cleanup[3] wiping multiprocessing.context
+# cleanup[3] wiping multiprocessing.process
+# cleanup[3] wiping multiprocessing.reduction
+# destroy copyreg
+# destroy pickle
+# destroy multiprocessing.context
+# cleanup[3] wiping _compat_pickle
+# cleanup[3] wiping _pickle
+# cleanup[3] wiping array
+# destroy array
+# cleanup[3] wiping multiprocessing.spawn
+# destroy runpy
+# destroy multiprocessing.reduction
+# cleanup[3] wiping multiprocessing.util
+# destroy multiprocessing.process
+# cleanup[3] wiping atexit
+# cleanup[3] wiping multiprocessing.popen_fork
+# destroy multiprocessing.util
+# cleanup[3] wiping PyQt5.QtCore
+# cleanup[3] wiping PyQt5.QtGui
+# cleanup[3] wiping PyQt5.QtWidgets
+# cleanup[3] wiping PyQt5.QtNetwork
+# cleanup[3] wiping PyQt5.QtMultimedia
+# cleanup[3] wiping PyQt5.QtQml
+# cleanup[3] wiping PyQt5.QtQuick
+# cleanup[3] wiping PyQt5.QtPositioning
+# cleanup[3] wiping PyQt5.Qt
+# cleanup[3] wiping PyQt5.uic
+# destroy PyQt5.uic.Compiler
+# destroy PyQt5.uic.Compiler.misc
+# destroy PyQt5.uic.Compiler.proxy_metaclass
+# destroy PyQt5.uic.Compiler.qobjectcreator
+# destroy PyQt5.uic.exceptions
+# destroy PyQt5.uic.icon_cache
+# destroy PyQt5.uic.port_v3
+# destroy PyQt5.uic.port_v3.ascii_upper
+# destroy PyQt5.uic.port_v3.proxy_base
+# destroy PyQt5.uic.port_v3.as_string
+# destroy PyQt5.uic.properties
+# destroy PyQt5.uic.objcreator
+# destroy PyQt5.uic.uiparser
+# destroy PyQt5.uic.Compiler.indenter
+# destroy PyQt5.uic.Compiler.compiler
+# cleanup[3] wiping logging
+# destroy _weakref
+# destroy traceback
+# destroy atexit
+# cleanup[3] wiping xml.etree.ElementPath
+# cleanup[3] wiping _elementtree
+# cleanup[3] wiping PyQt5.uic.Compiler.qtproxies
+# cleanup[3] wiping sys
+# cleanup[3] wiping builtins
+# destroy ctypes
+# destroy pkg_resources
+# destroy multiprocessing
+# destroy multiprocessing.spawn
+# destroy multiprocessing.popen_fork
+# destroy PyQt5.Qt
+# destroy PyQt5.uic
+# destroy _heapq
+# destroy signal
+# destroy _posixsubprocess
+# destroy selectors
+# destroy threading
+# destroy zlib
+# destroy bz2
+# destroy lzma
+# destroy zipimport
+# destroy _warnings
+# destroy pyexpat
+# destroy shutil
+# destroy weakref
+# destroy _thread
+# destroy dis
+# destroy enum
+# destroy linecache
+# destroy tokenize
+# destroy token
+# destroy stat
+# destroy genericpath
+# destroy pkg_resources._vendor.appdirs
+# destroy pkg_resources._vendor.packaging
+# destroy pkg_resources._vendor.pyparsing
+# destroy errno
+# destroy pkg_resources._vendor.six
+# destroy _sre
+# destroy sre_parse
+# destroy importlib
+# destroy PyQt5.uic.Compiler.qtproxies
+# destroy pkg_resources._vendor.six.moves.urllib_parse
+# destroy pkg_resources._vendor.six.moves.urllib.error
+# destroy pkg_resources._vendor.six.moves.urllib.request
+# destroy pkg_resources._vendor.six.moves.urllib.response
+# destroy pkg_resources._vendor.six.moves.urllib.robotparser
+# destroy pkg_resources._vendor.six.moves.urllib
+# destroy pkg_resources._vendor.six.moves.urllib.error
+# destroy pkg_resources._vendor.six.moves.urllib.request
+# destroy pkg_resources._vendor.six.moves.urllib.response
+# destroy pkg_resources._vendor.six.moves.urllib.robotparser
+# destroy posix
+# destroy select
+# destroy calendar
+# destroy time
+# destroy random
+# destroy socket
+# destroy datetime
+# destroy urllib
+# destroy email.header
+# destroy email.charset
+# destroy email.errors
+# destroy pkg_resources._vendor.six.moves
+# destroy abc
+# destroy itertools
+# destroy operator
+# destroy platform
+# destroy _operator
+# destroy string
+# destroy pkg_resources._vendor.six.moves.urllib_parse
+# destroy _struct
+# destroy _compat_pickle
+# destroy _pickle
+# destroy logging
+# destroy io
+# destroy contextlib
+# destroy _elementtree
+# destroy xml.etree.ElementPath
+# destroy importlib.abc
+# destroy _imp
+# destroy types
+# destroy warnings
+# destroy os
+# destroy posixpath
+# destroy binascii
+# destroy collections
+# destroy encodings
+# destroy re
+# destroy _collections_abc
+# destroy functools
+# destroy _locale
+# destroy _frozen_importlib
