@@ -1,4 +1,4 @@
-# CASPERapp - Linux
+# CASPERapp
 
 Thank you for your interest in CASPER.  Please visit the Release page to download the CASPERapp File.  While we work on debugging our packaging for Linux please see instructions below.
 
