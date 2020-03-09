@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1303</width>
-    <height>814</height>
+    <height>847</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>321</width>
+      <width>341</width>
       <height>41</height>
      </rect>
     </property>
@@ -65,7 +65,7 @@
       <x>10</x>
       <y>90</y>
       <width>321</width>
-      <height>116</height>
+      <height>134</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -182,13 +182,13 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>230</y>
       <width>631</width>
       <height>521</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -213,9 +213,9 @@
       <property name="geometry">
        <rect>
         <x>-1</x>
-        <y>-1</y>
+        <y>-31</y>
         <width>631</width>
-        <height>501</height>
+        <height>521</height>
        </rect>
       </property>
      </widget>
@@ -226,7 +226,7 @@
      <rect>
       <x>940</x>
       <y>40</y>
-      <width>21</width>
+      <width>31</width>
       <height>21</height>
      </rect>
     </property>
@@ -237,9 +237,9 @@
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>1060</x>
+      <x>1050</x>
       <y>40</y>
-      <width>21</width>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
@@ -270,9 +270,9 @@
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
-      <x>990</x>
+      <x>980</x>
       <y>100</y>
-      <width>41</width>
+      <width>51</width>
       <height>20</height>
      </rect>
     </property>
@@ -337,7 +337,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>740</y>
+      <y>760</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -383,7 +383,7 @@
      <x>0</x>
      <y>0</y>
      <width>1303</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

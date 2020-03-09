@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>725</width>
-    <height>556</height>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
       <x>390</x>
       <y>0</y>
       <width>271</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -350,7 +350,7 @@
       <x>10</x>
       <y>370</y>
       <width>111</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -362,7 +362,7 @@
      <rect>
       <x>320</x>
       <y>370</y>
-      <width>71</width>
+      <width>111</width>
       <height>16</height>
      </rect>
     </property>
@@ -451,8 +451,8 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>121</width>
-       <height>16</height>
+       <width>131</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -465,7 +465,7 @@
        <x>140</x>
        <y>30</y>
        <width>91</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -529,7 +529,7 @@
      <x>0</x>
      <y>0</y>
      <width>725</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

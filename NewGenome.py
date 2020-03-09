@@ -223,7 +223,8 @@ class NewGenome(QtWidgets.QMainWindow):
             line = str(p.readAll())
             line = line[2:]
             line = line[:len(line) - 1]
-            for lines in filter(None, line.split(r'\r\n')):
+            for lines in filter(None, line.split(r'\n')):
+                lines.strip(r'\n')
                 if (lines == 'Finished reading in the genome file.'):
                     self.num_chromo_next = True
                 elif (self.num_chromo_next == True):
@@ -233,10 +234,12 @@ class NewGenome(QtWidgets.QMainWindow):
                     temp = lines
                     temp = temp.replace('Chromosome ', '')
                     temp = temp.replace(' complete.', '')
-                    if (int(temp) == self.num_chromo):
-                        self.progressBar.setValue(99)
-                    else:
-                        self.progressBar.setValue(int(temp) / self.num_chromo * 100)
+                    temp = temp.strip(r'\\n')
+                    if temp.isnumeric():
+                        if (int(temp) == self.num_chromo):
+                            self.progressBar.setValue(99)
+                        else:
+                            self.progressBar.setValue(int(temp) / self.num_chromo * 100)
                 elif (lines == 'Finished Creating File.'):
                     self.progressBar.setValue(100)
 
@@ -245,10 +248,12 @@ class NewGenome(QtWidgets.QMainWindow):
 
         # Top layer for loop to go through all of the jobs in the queue:
         job = self.JobsQueue[0]
-        program = '"' + GlobalSettings.appdir + '\\Casper_Seq_Finder_Windows" '
+        program = '"' + GlobalSettings.appdir + '/CasperSeqFinderLinux" '
         self.JobInProgress.setText(job.name)
         self.process.readyReadStandardOutput.connect(partial(output_stdout, self.process))
-        self.process.start(program, job.get_arguments())
+        program += job.get_arguments()
+        print(program)
+        self.process.start(program)
         self.JobsQueueBox.clear()
         for jobs in self.JobsQueue:
             if(job.name != jobs.name):
@@ -393,6 +398,9 @@ class CasperJob:
         if(GlobalSettings.OPERATING_SYSTEM_ID == "Windows"):
             db_location = db_location.replace('/','\\')
             ref = str(self.reference_file).replace('/','\\')
+        else:
+            db_location = db_location
+            ref = str(self.reference_file)
         cmd = str()
         cmd += '"' + str(self.endo_name) + '" '
         cmd += '"' + str(self.endo_pam) + '" '
@@ -408,9 +416,9 @@ class CasperJob:
 
         if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
            cmd += '"' + db_location + '" '
-           cmd += '"' + GlobalSettings.CASPER_FOLDER_LOCATION + "\\CASPERinfo" + '" '
+           cmd += '"' + GlobalSettings.CASPER_FOLDER_LOCATION + "/CASPERinfo" + '" '
         else:
-            cmd += '"' + db_location + "\\" + '" '
+            cmd += '"' + db_location + "/" + '" '
             cmd += '"' + GlobalSettings.CASPER_FOLDER_LOCATION + "/CASPERinfo" + '" '
 
         cmd += '"' + ref + '" '
@@ -423,11 +431,14 @@ class CasperJob:
             cmd += '"' + self.substrain + '"'
 
 
-
+        print(cmd)
 
         if (GlobalSettings.OPERATING_SYSTEM_ID == "Windows"):
             db_location = db_location.replace('/', '\\')
             ref = str(self.reference_file).replace('/', '\\')
+        else:
+            db_location = db_location
+            ref = str(self.reference_file)
         ret_array = [self.endo_name, self.endo_pam, self.organism_code]
         # attach the 5' or 3' direction
         if self.anti:
@@ -436,7 +447,7 @@ class CasperJob:
             ret_array.append("FALSE")
         if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
            ret_array.append(db_location)
-           ret_array.append(GlobalSettings.CASPER_FOLDER_LOCATION + "\\CASPERinfo")
+           ret_array.append(GlobalSettings.CASPER_FOLDER_LOCATION + "/CASPERinfo")
            ret_array.append(ref)
 
         else:
@@ -448,6 +459,6 @@ class CasperJob:
         ret_array.append(self.sequence_length)
         ret_array.append(self.seed_length)
         ret_array.append(self.substrain)
-        #print(ret_array)
+        print(ret_array)
 
-        return ret_array
+        return cmd

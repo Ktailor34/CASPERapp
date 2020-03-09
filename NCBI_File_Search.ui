@@ -67,7 +67,7 @@
   <widget class="QLineEdit" name="organismLineEdit">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>80</x>
      <y>10</y>
      <width>113</width>
      <height>20</height>
@@ -111,9 +111,9 @@
   <widget class="QTableWidget" name="submissionTableWidget">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>150</y>
-     <width>251</width>
+     <width>241</width>
      <height>231</height>
     </rect>
    </property>
@@ -127,7 +127,7 @@
   <widget class="QPushButton" name="deselectButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>280</x>
      <y>300</y>
      <width>21</width>
      <height>23</height>
@@ -143,7 +143,7 @@
   <widget class="QPushButton" name="selectButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>280</x>
      <y>190</y>
      <width>21</width>
      <height>23</height>
@@ -185,9 +185,9 @@
   <widget class="QLabel" name="found_matches_label">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>70</x>
      <y>130</y>
-     <width>81</width>
+     <width>111</width>
      <height>16</height>
     </rect>
    </property>
@@ -198,9 +198,9 @@
   <widget class="QLabel" name="selected_matches_label">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>390</x>
      <y>130</y>
-     <width>91</width>
+     <width>121</width>
      <height>16</height>
     </rect>
    </property>
@@ -213,7 +213,7 @@
     <rect>
      <x>270</x>
      <y>170</y>
-     <width>31</width>
+     <width>51</width>
      <height>16</height>
     </rect>
    </property>
@@ -226,8 +226,8 @@
     <rect>
      <x>260</x>
      <y>280</y>
-     <width>47</width>
-     <height>14</height>
+     <width>71</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
@@ -237,7 +237,7 @@
   <widget class="QLineEdit" name="ncbi_ret_max_line_edit">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>340</x>
      <y>10</y>
      <width>113</width>
      <height>20</height>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>349</width>
+    <width>383</width>
     <height>380</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
     <rect>
      <x>10</x>
      <y>150</y>
-     <width>51</width>
+     <width>71</width>
      <height>21</height>
     </rect>
    </property>
@@ -42,9 +42,9 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>130</y>
-     <width>101</width>
+     <width>111</width>
      <height>21</height>
     </rect>
    </property>
@@ -81,7 +81,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>60</y>
      <width>101</width>
      <height>21</height>
@@ -115,7 +115,7 @@
   <widget class="QComboBox" name="mismatchcomboBox">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>150</y>
      <width>104</width>
      <height>26</height>
@@ -165,7 +165,7 @@
   <widget class="QComboBox" name="EndocomboBox">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>90</y>
      <width>101</width>
      <height>26</height>
@@ -175,7 +175,7 @@
   <widget class="QLineEdit" name="tolerancelineEdit">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>80</x>
      <y>150</y>
      <width>71</width>
      <height>21</height>
@@ -211,9 +211,9 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>330</y>
-     <width>41</width>
+     <width>71</width>
      <height>20</height>
     </rect>
    </property>
@@ -226,8 +226,8 @@
     <rect>
      <x>240</x>
      <y>190</y>
-     <width>101</width>
-     <height>31</height>
+     <width>141</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -238,7 +238,7 @@
   <widget class="QPushButton" name="Run">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>30</x>
      <y>310</y>
      <width>81</width>
      <height>21</height>
@@ -251,7 +251,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>150</y>
      <width>71</width>
      <height>21</height>
@@ -264,7 +264,7 @@
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>-20</x>
+     <x>0</x>
      <y>40</y>
      <width>451</width>
      <height>20</height>
@@ -290,7 +290,7 @@
   <widget class="QLineEdit" name="FileName">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>260</x>
      <y>250</y>
      <width>101</width>
      <height>20</height>
@@ -302,7 +302,7 @@
     <rect>
      <x>240</x>
      <y>230</y>
-     <width>101</width>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
@@ -316,8 +316,8 @@
   <widget class="QPushButton" name="submitButton">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>310</y>
+     <x>290</x>
+     <y>300</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -329,8 +329,8 @@
   <widget class="QPushButton" name="cancelButton">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>350</y>
+     <x>290</x>
+     <y>340</y>
      <width>75</width>
      <height>23</height>
     </rect>
