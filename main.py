@@ -1196,7 +1196,7 @@ class CMainWindow(QtWidgets.QMainWindow):
 
     def make_dictonary(self):
         url = "https://www.genome.jp/dbget-bin/get_linkdb?-t+genes+gn:"+self.TNumbers[self.Annotations_Organism.currentText()]
-        source_code = requests.get(url)
+        source_code = requests.get(url, verify=False)
         plain_text = source_code.text
         buf = io.StringIO(plain_text)
 

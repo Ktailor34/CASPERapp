@@ -1,10 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-
+additionalLibs = []
+additionalLibs.append( ("libGL.so.1", "/usr/lib/x86_64-linux-gnu/libGL.so.1", 'BINARY') )
 
 a = Analysis(['main.py'],
-             pathex=['/home/trinhlab/Desktop/CASPERapp'],
+             pathex=['/home/tfry12/Desktop/CASPERapp-1.0-Linux'],
              binaries=[
 				('CasperSeqFinderLinux', '.')
 			 ],
@@ -43,7 +44,8 @@ a = Analysis(['main.py'],
 				'repeats_vs_chromo',
 				'pop_analysis_3dgraph',
 				'pop_analysis_repeats_graph',
-				'pop_analysis_venn_diagram'
+				'pop_analysis_venn_diagram',
+				'numpy.core._dtypes_ctypes'
 			],
              hookspath=[],
              runtime_hooks=[],
