@@ -2,15 +2,11 @@ import os
 from PyQt5 import QtWidgets, Qt, QtGui, QtCore, uic
 import GlobalSettings
 import operator
-from PyQt5.QtChart import (QBarCategoryAxis,QBarSet, QChartView, QBarSeries,QChart,QLineSeries, QValueAxis)
-from PyQt5.QtGui import QPainter, QBrush, QPen
-#import PyQt5
+from PyQt5.QtChart import QChartView
 from Algorithms import SeqTranslate
 from CSPRparser import CSPRparser
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
-from matplotlib.backends.backend_qt5agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.ticker import MaxNLocator
-import datetime
+import os, sys
 
 
 class Multitargeting(QtWidgets.QMainWindow):
@@ -20,8 +16,8 @@ class Multitargeting(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
 
         super(Multitargeting, self).__init__()
-        uic.loadUi('multitargetingwindow.ui', self)
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'multitargetingwindow.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
         # Storage containers for the repeats and seed sequences
         self.sq=SeqTranslate()  # SeqTranslate object used in class
 

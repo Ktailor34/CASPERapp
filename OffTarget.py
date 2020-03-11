@@ -6,7 +6,7 @@
 O = OffTargetAlgorithm()"""
 
 
-import os
+import os, sys
 from PyQt5 import QtWidgets, uic, QtCore
 from functools import partial
 import GlobalSettings
@@ -17,7 +17,7 @@ class OffTarget(QtWidgets.QDialog):
     def __init__(self):
 
         super(OffTarget, self).__init__()
-        uic.loadUi(GlobalSettings.appdir+'\OffTargetAnalysis.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetAnalysis.ui'), self)
         self.setWindowTitle("Off-Target Analysis")
         self.show()
         self.progressBar.setMinimum(0)
@@ -117,26 +117,25 @@ class OffTarget(QtWidgets.QDialog):
 
         #setup arguments for C++ .exe
         app_path = GlobalSettings.appdir
-        #exe_path = app_path + r'\OffTargetFolder\CasperOffTargetWindows '
-        exe_path = app_path + r'\OffTargetFolder\OT '
+        exe_path = os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetFolder/./OT')
         exe_path = '"' +  exe_path + '"'
-        data_path = ' "' + app_path + '\\OffTargetFolder\\temp.txt' + '" ' ##
+        data_path = ' "' + os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetFolder/temp.txt') + '" ' ##
         compressed = r' True ' ##
-        cspr_path = ' "' + os.getcwd() + '\\' + file_name + '" '
-        self.output_path = ' "' + os.getcwd() + '\\' + self.FileName.text() + '_OffTargetResults.txt" '
+        cspr_path = ' "' + os.getcwd() + '/' + file_name + '" '
+        self.output_path = ' "' + os.getcwd() + '/' + self.FileName.text() + '_OffTargetResults.txt" '
         filename = self.output_path
         filename = filename[:len(filename) - 1]
         filename = filename[1:]
-        filename = filename.replace(r'\\', '\\')
+        filename = filename.replace(r'\\', '/')
         filename = filename.replace('"', '')
         exists = os.path.isfile(filename)
-        CASPER_info_path = r' "' + app_path + '\\CASPERinfo' + '" '
+        CASPER_info_path = r' "' + os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo') + '" '
         num_of_mismathes = int(self.mismatchcomboBox.currentText())
         tolerance = self.tolerance
 
         #create command string
         cmd = exe_path + data_path + compressed + cspr_path + self.output_path + CASPER_info_path + str(num_of_mismathes) + ' ' + str(tolerance) + detailed_output + avg_output
-
+        print(cmd)
         #used to know when the process is done
         def finished():
             self.running = False
@@ -148,7 +147,7 @@ class OffTarget(QtWidgets.QDialog):
             #percentages to be able to type cast them as floats and update the progress bar. Also, must
             #split the input read based on '\n\ characters since the stdout read can read multiple lines at
             #once and is all read in as raw bytes
-            line = str(p.readAllStandardOutput())
+            line = str(p.readAll())
             line = line[2:]
             line = line[:len(line)-1]
             for lines in filter(None,line.split(r'\r\n')):
@@ -156,12 +155,14 @@ class OffTarget(QtWidgets.QDialog):
                     self.perc = True
                 if(self.perc == True and self.bool_temp == False and lines.find("Running Off Target Algorithm for") == -1):
                     lines = lines[32:]
+                    lines = lines.strip(r'\\n')
                     lines = lines.replace("%","")
-                    if(float(lines) <= 99.5):
-                        num = float(lines)
-                        self.progressBar.setValue(num)
-                    else:
-                        self.bool_temp = True
+                    if lines.isnumeric():
+                        if(float(lines) < 99):
+                            num = float(lines)
+                            self.progressBar.setValue(num)
+                        else:
+                            self.bool_temp = True
 
 
         #connect QProcess to the dataReady func, and finished func, reset progressBar only if the outputfile name
@@ -169,7 +170,8 @@ class OffTarget(QtWidgets.QDialog):
         if(exists == False):
             self.process.readyReadStandardOutput.connect(partial(dataReady,self.process))
             self.progressBar.setValue(0)
-            QtCore.QTimer.singleShot(100, partial(self.process.start, cmd))
+            self.process.start(cmd)
+            #QtCore.QTimer.singleShot(100, partial(self.process.start, cmd))
             self.process.finished.connect(finished)
         else: #error message about file already being created
             msg = QtWidgets.QMessageBox()

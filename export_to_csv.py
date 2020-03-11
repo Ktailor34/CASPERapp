@@ -1,5 +1,5 @@
 import GlobalSettings
-import os
+import os, sys
 from PyQt5 import QtWidgets, Qt, uic, QtCore
 
 
@@ -13,9 +13,9 @@ class export_csv_window(QtWidgets.QDialog):
     def __init__(self):
         # qt stuff
         super(export_csv_window, self).__init__()
-        uic.loadUi('export_to_csv_window.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'export_to_csv_window.ui'), self)
         self.setWindowTitle("Export to .csv")
-        self.setWindowIcon(Qt.QIcon("cas9image.png"))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
 
         # button connections
         self.browse_button.clicked.connect(self.browseForFolder)

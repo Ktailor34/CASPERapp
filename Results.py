@@ -24,7 +24,7 @@ class Results(QtWidgets.QMainWindow):
 
     def __init__(self, parent=None):
         super(Results, self).__init__(parent)
-        uic.loadUi('resultsWindow.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'resultsWindow.ui'), self)
 
         self.setWindowTitle('Results')
         self.geneViewer.setReadOnly(True)
@@ -548,7 +548,7 @@ class Results(QtWidgets.QMainWindow):
             if self.directory.find("/") != -1:
                 file = (self.directory+"/" + self.org + "_" + endo + ".cspr")
             else:
-                file = (self.directory + "\\" + self.org + "_" + endo + ".cspr")
+                file = (self.directory + "/" + self.org + "_" + endo + ".cspr")
 
             #create the parser, read the targets store it. then display the GeneData screen
             parser = CSPRparser(file)
@@ -774,7 +774,7 @@ class Results(QtWidgets.QMainWindow):
     #linked to when the user pushes tools->off target analysis
     def Off_Target_Analysis(self):
         #build temp file for offtarget to read from
-        f = open(GlobalSettings.appdir + '\\OffTargetFolder' + '\\temp.txt','w+')
+        f = open(os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetFolder') + '/temp.txt','w+')
         self.OTA.clear()
         for row in range(self.targetTable.rowCount()):
             if(self.targetTable.cellWidget(row,6).isChecked()):
@@ -806,6 +806,7 @@ class Results(QtWidgets.QMainWindow):
         #setup filename based on output name given in OffTarget
         filename = self.off_tar_win.output_path
 
+
         # if the user hits submit without running thr program, do nothing
         if filename == '':
             return
@@ -818,7 +819,7 @@ class Results(QtWidgets.QMainWindow):
         self.off_tar_win.hide()
         filename = filename[:len(filename)-1]
         filename = filename[1:]
-        filename = filename.replace(r'\\', '\\')
+        filename = filename.replace(r'\\', '/')
         filename = filename.replace('"', '')
         self.files_list.append(filename)
         out_file = open(filename, "r")
@@ -833,6 +834,7 @@ class Results(QtWidgets.QMainWindow):
                 line = line.strip('\n')
                 if (line != ''):
                     values = line.split(":")
+                    seq = str(values[0])
                     row = self.rows_and_seq_list[self.comboBoxGene.currentIndex()][values[0]]
                     OT = QtWidgets.QTableWidgetItem()
                     OT.setData(QtCore.Qt.EditRole, values[1])
@@ -1003,9 +1005,9 @@ class geneViewerSettings(QtWidgets.QDialog):
     def __init__(self):
         # Qt init stuff
         super(geneViewerSettings, self).__init__()
-        uic.loadUi("geneViewerSettings.ui", self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), "geneViewerSettings.ui"), self)
         self.setWindowTitle("Change Gene Viewer Settings")
-        self.setWindowIcon(Qt.QIcon("cas9image.png"))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
 
         # button connections
         self.kegg_radio_button.clicked.connect(self.change_file_type)

@@ -1,7 +1,7 @@
 
 from PyQt5 import QtWidgets, Qt, QtGui, QtCore, uic
 import GlobalSettings
-
+import os, sys
 ######################################################
 # CoTargeting class: This class is a window that lets the user select which endonucleases to co-target with
 # inputs are from the user and from results
@@ -12,8 +12,8 @@ class CoTargeting(QtWidgets.QDialog):
     def __init__(self, path):
         # pyqt stuff
         super(CoTargeting, self).__init__()
-        uic.loadUi('co_targeting.ui', self)
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'co_targeting.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
 
         # endo_table stuff
         self.endo_table.setColumnCount(1)  # hardcoded because there will always be 1 columns

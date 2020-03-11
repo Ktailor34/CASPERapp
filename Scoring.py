@@ -1,11 +1,11 @@
-import sys
+import os, sys
 
 
 class OnTargetScore:
 
     def __init__(self):
         self.ScoringMatrix = []  # holds all the info of the Crisprscan features
-        f = open('CASPERinfo')
+        f = open(os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo'))
         while True:
             line = f.readline()
             if line[:-1] == 'CRISPRSCAN_DATA':

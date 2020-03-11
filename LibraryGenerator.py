@@ -1,6 +1,6 @@
 """This file holds the main class and any supplementary classes for forming a sgRNA library of targets."""
 
-import os
+import os, sys
 import Algorithms
 from PyQt5 import QtWidgets, Qt, QtGui, QtCore, uic
 
@@ -9,7 +9,7 @@ class Library(QtWidgets.QDialog):
 
     def __init__(self):
         super(Library, self).__init__()
-        uic.loadUi('library_prompt.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'library_prompt.ui'), self)
         self.library_name = ""
 
         self.Targets = list()  # List of targets that contain information to be printed to the .csv file

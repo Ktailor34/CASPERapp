@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
+    <width>619</width>
     <height>408</height>
    </rect>
   </property>
@@ -44,7 +44,7 @@
     <rect>
      <x>320</x>
      <y>150</y>
-     <width>261</width>
+     <width>281</width>
      <height>31</height>
     </rect>
    </property>
@@ -96,7 +96,7 @@
     <rect>
      <x>10</x>
      <y>100</y>
-     <width>301</width>
+     <width>309</width>
      <height>51</height>
     </rect>
    </property>
@@ -123,7 +123,7 @@
      <x>320</x>
      <y>230</y>
      <width>238</width>
-     <height>41</height>
+     <height>52</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -149,7 +149,7 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>10</x>
      <y>220</y>
      <width>261</width>
      <height>131</height>
@@ -161,7 +161,7 @@
    <widget class="QComboBox" name="minON_comboBox">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>190</x>
       <y>30</y>
       <width>71</width>
       <height>26</height>
@@ -176,8 +176,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>141</width>
-      <height>16</height>
+      <width>181</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -190,7 +190,7 @@
       <x>10</x>
       <y>60</y>
       <width>141</width>
-      <height>16</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -215,8 +215,8 @@
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>91</width>
-      <height>16</height>
+      <width>121</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -226,7 +226,7 @@
    <widget class="QLineEdit" name="fiveprimeseq">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>130</x>
       <y>90</y>
       <width>113</width>
       <height>21</height>
@@ -240,7 +240,7 @@
   <widget class="QLineEdit" name="start_target_range">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>140</x>
      <y>160</y>
      <width>41</width>
      <height>21</height>
@@ -253,7 +253,7 @@
   <widget class="QLineEdit" name="end_target_range">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>210</x>
      <y>160</y>
      <width>41</width>
      <height>21</height>
@@ -268,8 +268,8 @@
     <rect>
      <x>20</x>
      <y>160</y>
-     <width>91</width>
-     <height>16</height>
+     <width>111</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -279,7 +279,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>190</x>
      <y>160</y>
      <width>16</width>
      <height>16</height>
@@ -293,13 +293,16 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>190</y>
-     <width>291</width>
-     <height>16</height>
+     <y>180</y>
+     <width>281</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>(Start = 0, End = 100), pulls from the beginning</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="submit_button">
@@ -336,7 +339,7 @@
     <rect>
      <x>320</x>
      <y>120</y>
-     <width>141</width>
+     <width>161</width>
      <height>16</height>
     </rect>
    </property>
@@ -347,7 +350,7 @@
   <widget class="QLineEdit" name="space_line_edit">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>490</x>
      <y>120</y>
      <width>113</width>
      <height>20</height>
@@ -376,10 +379,10 @@
   <widget class="QLabel" name="OT_prog_label">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>430</x>
      <y>60</y>
      <width>191</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -391,7 +394,7 @@
     <rect>
      <x>320</x>
      <y>180</y>
-     <width>131</width>
+     <width>141</width>
      <height>18</height>
     </rect>
    </property>
@@ -405,7 +408,7 @@
   <widget class="QCheckBox" name="to_csv_checkbox">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>460</x>
      <y>180</y>
      <width>131</width>
      <height>18</height>

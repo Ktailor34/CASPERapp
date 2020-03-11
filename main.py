@@ -41,8 +41,8 @@ import populationAnalysis
 class AnnotationsWindow(QtWidgets.QMainWindow):
     def __init__(self, info_path):
         super(AnnotationsWindow, self).__init__()
-        uic.loadUi('Annotation Details.ui', self)
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'Annotation Details.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
         self.Submit_button.clicked.connect(self.submit)
         self.Go_Back_Button.clicked.connect(self.go_Back)
         self.select_all_checkbox.stateChanged.connect(self.select_all_genes)
@@ -233,7 +233,7 @@ class CMainWindow(QtWidgets.QMainWindow):
     def __init__(self,info_path):
 
         super(CMainWindow, self).__init__()
-        uic.loadUi('CASPER_main.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'CASPER_main.ui'), self)
         self.dbpath = ""
         self.info_path = info_path
         self.data = {} # each org genome name and the endonucleases along with it
@@ -252,7 +252,7 @@ class CMainWindow(QtWidgets.QMainWindow):
         self.organismDict = dict() # the dictionary for the links to download. Key is the description of the organism, value is the ID that can be found in link_list
 
         # --- Button Modifications --- #
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
         self.pushButton_FindTargets.clicked.connect(self.gather_settings)
         self.pushButton_ViewTargets.clicked.connect(self.view_results)
         self.pushButton_ViewTargets.setEnabled(False)
@@ -834,7 +834,7 @@ class CMainWindow(QtWidgets.QMainWindow):
             pamdir = True
             
         output_location = GlobalSettings.CSPR_DB
-        path_to_info = GlobalSettings.appdir + '/CASPERinfo'
+        path_to_info = os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo')
         orgName = 'temp org'
         gRNA_length = my_seq.endo_info[myEndoChoice][2]
         seed_length = my_seq.endo_info[myEndoChoice][1]
@@ -1376,13 +1376,13 @@ class StartupWindow(QtWidgets.QDialog):
     def __init__(self):
 
         super(StartupWindow, self).__init__()
-        uic.loadUi('startupCASPER.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'startupCASPER.ui'), self)
         self.setWindowTitle('WELCOME TO CASPER!')
         self.setWindowModality(2)  # sets the modality of the window to Application Modal
         #self.make_window = annotations_Window()
         #---Button Modifications---#
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
-        pixmap = QtGui.QPixmap('mainart.jpg')
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        pixmap = QtGui.QPixmap(os.path.join(os.path.dirname(sys.argv[0]), 'mainart.jpg'))
         self.labelforart.setPixmap(pixmap)
         self.pushButton_2.setDefault(True)
         # Check to see the operating system you are on and change this in Global Settings:
@@ -1432,10 +1432,7 @@ class StartupWindow(QtWidgets.QDialog):
                                                                                     QtWidgets.QMessageBox.Ok)
 
     def check_dir(self):
-        if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
-            cspr_info = open(self.info_path+"\\CASPERinfo",'r+')
-        else:
-            cspr_info = open(self.info_path+"/CASPERinfo", 'r+')
+        cspr_info = open(os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo'), 'r+')
         cspr_info = cspr_info.read()
         lines = cspr_info.split('\n')
         line = ""
@@ -1449,10 +1446,7 @@ class StartupWindow(QtWidgets.QDialog):
             return line[10:]
 
     def re_write_dir(self):
-        if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
-            cspr_info = open(self.info_path+"\\CASPERinfo",'r+')
-        else:
-            cspr_info = open(self.info_path+"/CASPERinfo", 'r+')
+        cspr_info = open(os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo'), 'r+')
         cspr_info_text = cspr_info.read()
         cspr_info_text = cspr_info_text.split('\n')
         full_doc = ""
@@ -1468,10 +1462,7 @@ class StartupWindow(QtWidgets.QDialog):
                 full_doc = full_doc+"\n" + item
         full_doc = full_doc[1:]
         cspr_info.close()
-        if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
-            cspr_info = open(self.info_path+"\\CASPERinfo",'w+')
-        else:
-            cspr_info = open(self.info_path+"/CASPERinfo", 'w+')
+        cspr_info = open(os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo'), 'r+')
         cspr_info.write(full_doc)
 
         cspr_info.close()

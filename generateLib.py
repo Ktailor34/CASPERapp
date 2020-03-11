@@ -1,5 +1,5 @@
 import GlobalSettings
-import os
+import os, sys
 from PyQt5 import QtWidgets, Qt, uic, QtCore
 from Algorithms import SeqTranslate
 from functools import partial
@@ -200,7 +200,7 @@ class genLibrary(QtWidgets.QDialog):
         filename = filename[:len(filename) - 1]
         filename = filename[1:]
         filename = filename.replace('"', '')
-        CASPER_info_path = r' "' + app_path + '\\CASPERinfo' + '" '
+        CASPER_info_path = os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo') + '" '
         num_of_mismathes = self.off_max_misMatch
         tolerance = self.off_tol  # create command string
 

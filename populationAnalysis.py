@@ -1,28 +1,20 @@
 from PyQt5 import QtWidgets, Qt, QtGui, QtCore, uic
 import GlobalSettings
-import os
+import os, sys
 from CSPRparser import CSPRparser
 import Algorithms
 from functools import partial
-from mpl_toolkits.mplot3d import axes3d
 import numpy as np
 from matplotlib_venn import venn3_unweighted
-import matplotlib.pyplot as plt
-import itertools
-from PyQt5.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvas
-from matplotlib_venn import venn3_unweighted
-import matplotlib.pyplot as plt
 import show_nams_ui
 import show_names2_ui
 
-from statistics import mode
 
 class Pop_Analysis(QtWidgets.QMainWindow):
     def __init__(self):
         super(Pop_Analysis, self).__init__()
-        uic.loadUi('populationanalysis.ui', self)
-        self.setWindowIcon(QtGui.QIcon("cas9image.png"))
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'populationanalysis.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
         self.goBackButton.clicked.connect(self.go_back)
         self.analyze_button.clicked.connect(self.pre_analyze)
         self.clear_Button.clicked.connect(self.clear)
@@ -253,10 +245,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
 
     # this function opens CASPERinfo and builds the dropdown menu of selectable endonucleases
     def fillEndo(self):
-        if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
-            f = open(GlobalSettings.appdir + "\\CASPERinfo")
-        else:
-            f = open(GlobalSettings.appdir + "/CASPERinfo")
+        f = open(os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo"))
         while True:
             line = f.readline()
             if line.startswith('ENDONUCLEASES'):
@@ -696,7 +685,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
     def __init__(self):
         # Qt init stuff
         super(fna_and_cspr_combiner, self).__init__()
-        uic.loadUi("pop_analysis_fna_combiner.ui", self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), "pop_analysis_fna_combiner.ui"), self)
         self.sequencer_prog_bar.setValue(0)
 
         # button connections
@@ -869,7 +858,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         # get the output folder location
         output_location = GlobalSettings.CSPR_DB
         # get the path to CASPERinfo
-        path_to_info = GlobalSettings.appdir + '/CASPERinfo'
+        path_to_info = os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo')
         # make org name something that will make more sense, this is just for testing right now
         orgName = self.orgName_line_edit.text() + '  , (meta), ' + self.orgNum_lineEdit.text()
         # get the seed and RNA length, based on the endo choice
