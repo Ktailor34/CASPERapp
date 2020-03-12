@@ -873,7 +873,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         #------------------done getting the arguments------------------------------
 
         # get the program path
-        program = '"' + GlobalSettings.appdir + '/Casper_Seq_Finder_Windows' + '" '
+        program = '"' + os.path.join(os.path.dirname(sys.argv[0]),'Casper_Seq_Finder_') + '" '
 
         # compile all of the arguments into one line
         args =  '"' + endo_choice + '" '

@@ -239,7 +239,7 @@ class NewGenome(QtWidgets.QMainWindow):
 
         # Top layer for loop to go through all of the jobs in the queue:
         job = self.JobsQueue[0]
-        program = '"' + GlobalSettings.appdir + '/CasperSeqFinderLinux" '
+        program = '"' + os.path.join(os.path.dirname(sys.argv[0]), 'Casper_Seq_Finder" ')
         self.JobInProgress.setText(job.name)
         self.process.readyReadStandardOutput.connect(partial(output_stdout, self.process))
         program += job.get_arguments()
