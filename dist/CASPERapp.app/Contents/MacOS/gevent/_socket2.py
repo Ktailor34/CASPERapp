@@ -1,1 +1,0 @@
-../../Resources/gevent/_socket2.py

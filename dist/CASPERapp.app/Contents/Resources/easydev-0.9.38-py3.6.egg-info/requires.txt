@@ -1,6 +1,0 @@
-colorama
-pexpect
-colorlog
-
-[profiler]
-line_profiler_test

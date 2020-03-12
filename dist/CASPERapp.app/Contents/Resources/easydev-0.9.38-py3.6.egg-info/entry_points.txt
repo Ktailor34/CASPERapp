@@ -1,4 +1,0 @@
-[console_scripts]
-browse = easydev.browser:main
-easydev_buildPackage = easydev.package:buildPackage
-

@@ -1,1 +1,0 @@
-../../../Resources/gevent/resolver/cares.pyx
