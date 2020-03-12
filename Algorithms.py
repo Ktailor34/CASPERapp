@@ -4,6 +4,7 @@
     decompress_tuple function."""
 
 import GlobalSettings
+import os, sys
 class SeqTranslate:
 
     def __init__(self):
@@ -128,7 +129,7 @@ class SeqTranslate:
         return int(loc), str(sequence), pam, int(scr), dira, endo
 
     def endo_import(self):
-        f = open(GlobalSettings.appdir + "/CASPERinfo")
+        f = open(os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo"))
         while True:
             line = f.readline()
             if line.startswith("ENDONUCLEASES"):

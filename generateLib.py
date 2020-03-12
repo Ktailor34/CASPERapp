@@ -19,9 +19,9 @@ class genLibrary(QtWidgets.QDialog):
     def __init__(self):
         # qt stuff
         super(genLibrary, self).__init__()
-        uic.loadUi('library_prompt.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'library_prompt.ui'), self)
         self.setWindowTitle('Generate Library')
-        self.setWindowIcon(Qt.QIcon('cas9image.png'))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), 'cas9image.png')))
 
         # button connections
         self.cancel_button.clicked.connect(self.cancel_function)
@@ -190,7 +190,7 @@ class genLibrary(QtWidgets.QDialog):
                         self.bool_temp = True
 
         app_path = GlobalSettings.appdir
-        exe_path = app_path + '\OffTargetFolder\OT'
+        exe_path = os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetFolder\OT')
         exe_path = '"' + exe_path + '" '
         data_path = '"' + GlobalSettings.CSPR_DB.replace('/','\\') + "\\off_compressed.txt" + '" '
         compressed = r' True '  ##

@@ -4,16 +4,16 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['/home/trinhlab/Desktop/CASPERapp'],
+             pathex=['/Users/tfry12/Desktop/CASPERapp'],
              binaries=[
-				('CasperSeqFinderLinux', '.')
+				('Casper_Seq_Finder', '.')
 			 ],
              datas=[
 				('OffTargetFolder', 'OffTargetFolder'),
 				('CASPERinfo', '.'),
 				('Casperimg.icns', '.'),
+				('test.icns', '.'),
 				('Codonimg.icns', '.'),
-				('myicon.ico', '.'),
 				('mainart.jpg', '.'),
 				('cas9image.png', '.'),
 				('Annotation Details.ui', '.'),
@@ -66,7 +66,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=False )
+          console=False, icon='test.icns')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -75,3 +75,7 @@ coll = COLLECT(exe,
                upx=True,
                upx_exclude=[],
                name='CASPERapp')
+
+app = BUNDLE(coll, icon='test.icns',
+             name='CASPERapp.app',
+             bundle_identifier=None)
