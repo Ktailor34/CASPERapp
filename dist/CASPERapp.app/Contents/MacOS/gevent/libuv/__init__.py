@@ -1,1 +1,0 @@
-../../../Resources/gevent/libuv/__init__.py

@@ -1,1 +1,0 @@
-../../Resources/gevent/_socket3.py

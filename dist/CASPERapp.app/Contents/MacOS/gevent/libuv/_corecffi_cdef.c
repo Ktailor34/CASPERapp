@@ -1,1 +1,0 @@
-../../../Resources/gevent/libuv/_corecffi_cdef.c

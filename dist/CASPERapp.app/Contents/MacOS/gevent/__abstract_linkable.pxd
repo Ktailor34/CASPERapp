@@ -1,1 +1,0 @@
-../../Resources/gevent/__abstract_linkable.pxd
