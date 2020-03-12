@@ -501,69 +501,70 @@ class Pop_Analysis(QtWidgets.QMainWindow):
 
     #this function is for the 3D bar graph
     def plot_3D_graph(self, endoChoice):
+        if(self.total_org_number > 2):
+            rows, cols = (self.total_org_number, self.total_org_number)
 
-        rows, cols = (self.total_org_number, self.total_org_number)
-        arr = [[0 for i in range(cols)] for j in range(rows)]
+            arr = [[0 for i in range(cols)] for j in range(rows)]
 
-        x3 = []
-        y3 = []
-        z3 = np.zeros(int((self.total_org_number*(self.total_org_number-1))/2))
-        dz = []
-        self.names = []
-        dx = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
-        dy = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
+            x3 = []
+            y3 = []
+            z3 = np.zeros(int((self.total_org_number*(self.total_org_number-1))/2))
+            dz = []
+            self.names = []
+            dx = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
+            dy = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
 
-        for keys in self.parser.popData:
-            for items in self.parser.popData[keys]:
-                if items[0] not in self.names:
-                    self.names.append(items[0])
+            for keys in self.parser.popData:
+                for items in self.parser.popData[keys]:
+                    if items[0] not in self.names:
+                        self.names.append(items[0])
 
-        for keys in self.parser.popData:
-            temp_names = []
-            for items in self.parser.popData[keys]:
-                if items[0] not in temp_names:
-                    temp_names.append(items[0])
-
-
-            if len(temp_names) >= 2:
-                for i in range(len(temp_names)-1):
-                    j = i+1
-                    while j != len(temp_names):
-                        arr[self.names.index(temp_names[i])][self.names.index(temp_names[j])] += 1
-                        arr[self.names.index(temp_names[j])][self.names.index(temp_names[i])] += 1
-                        j+=1
+            for keys in self.parser.popData:
+                temp_names = []
+                for items in self.parser.popData[keys]:
+                    if items[0] not in temp_names:
+                        temp_names.append(items[0])
 
 
-        for j in range(cols):
-            i = len(self.names)-1
-            while i != j:
-                x3.append(i)
-                y3.append(j)
-                dz.append(arr[i][j])
-                i -= 1
+                if len(temp_names) >= 2:
+                    for i in range(len(temp_names)-1):
+                        j = i+1
+                        while j != len(temp_names):
+                            arr[self.names.index(temp_names[i])][self.names.index(temp_names[j])] += 1
+                            arr[self.names.index(temp_names[j])][self.names.index(temp_names[i])] += 1
+                            j+=1
+
+
+            for j in range(cols):
+                i = len(self.names)-1
+                while i != j:
+                    x3.append(i)
+                    y3.append(j)
+                    dz.append(arr[i][j])
+                    i -= 1
 
 
 
-        self.pop_analysis_3dgraph.canvas.axes.clear()
-        self.pop_analysis_3dgraph.canvas.axes.bar3d(x3,y3,z3,dx,dy,dz)
+            self.pop_analysis_3dgraph.canvas.axes.clear()
+            self.pop_analysis_3dgraph.canvas.axes.bar3d(x3,y3,z3,dx,dy,dz)
 
-        new_names = []
+            new_names = []
 
-        for n in range(len(self.names)):
-            new_names.append(n)
+            for n in range(len(self.names)):
+                new_names.append(n)
 
-        self.pop_analysis_3dgraph.canvas.axes.set_xlabel('x')
-        self.pop_analysis_3dgraph.canvas.axes.set_ylabel('y')
-        self.pop_analysis_3dgraph.canvas.axes.set_zlabel('z')
+            self.pop_analysis_3dgraph.canvas.axes.set_xlabel('x')
+            self.pop_analysis_3dgraph.canvas.axes.set_ylabel('y')
+            self.pop_analysis_3dgraph.canvas.axes.set_zlabel('z')
 
-        self.pop_analysis_3dgraph.canvas.axes.set_xticks(np.arange(1, self.total_org_number+1, 1))
-        self.pop_analysis_3dgraph.canvas.axes.set_yticks(np.arange(0, self.total_org_number, 1))
+            self.pop_analysis_3dgraph.canvas.axes.set_xticks(np.arange(1, self.total_org_number+1, 1))
+            self.pop_analysis_3dgraph.canvas.axes.set_yticks(np.arange(0, self.total_org_number, 1))
 
-        self.pop_analysis_3dgraph.canvas.axes.tick_params(labelsize=8)
-        self.pop_analysis_3dgraph.canvas.axes.set_xticklabels(new_names, rotation=45)
-        self.pop_analysis_3dgraph.canvas.axes.set_yticklabels(new_names, rotation=-45)
+            self.pop_analysis_3dgraph.canvas.axes.tick_params(labelsize=8)
+            self.pop_analysis_3dgraph.canvas.axes.set_xticklabels(new_names, rotation=45)
+            self.pop_analysis_3dgraph.canvas.axes.set_yticklabels(new_names, rotation=-45)
 
-        self.pop_analysis_3dgraph.canvas.draw()
+            self.pop_analysis_3dgraph.canvas.draw()
 
     def plot_venn(self):
         self.pop_analysis_venn_diagram.canvas.figure.clf()
@@ -820,16 +821,23 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
             line = str(p.readAll())
             line = line[2:]
             line = line[:len(line) - 1]
-            for lines in filter(None, line.split(r'\r\n')):
+            line = line.strip('\\n')
+            line = line.strip('\n')
+            for lines in filter(None, line.split(r'\n')):
+                lines = lines.strip('\n')
+                lines = lines.strip('\\n')
+                print(lines)
                 if (lines == 'Finished reading in the genome file.'):
                     self.num_chromo_next = True
                 elif (self.num_chromo_next == True):
+                    lines = lines.strip('\\n')
                     self.num_chromo_next = False
                     self.num_chromo = int(lines)
                 elif (lines.find('Chromosome') != -1 and lines.find('complete.') != -1):
                     temp = lines
                     temp = temp.replace('Chromosome ', '')
                     temp = temp.replace(' complete.', '')
+                    temp = temp.strip('\n')
                     if (int(temp) == self.num_chromo):
                         self.sequencer_prog_bar.setValue(99)
                     else:
@@ -891,18 +899,17 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         args = args + '"' + pam + '" '
         args = args + '"' + code + '" '
         args = args + str(pamdir) + ' '
-        args = args + '"' + output_location + '" '
+        args = args + '"' + output_location + '/" '
         args = args + '"' + path_to_info + '" '
         args = args + '"' + path_to_fna + '" '
         args = args + '"' + orgName + '" '
         args = args + gRNA_length + ' '
         args = args + seed_length + ' '
         args = args + '"' + secondCode + '"'
-
+        print(args)
         # combine the program and arguments into 1
         program = program + args
 
-        print(program)
         self.process.readyReadStandardOutput.connect(partial(output_stdout, self.process))
         self.proc_running = True
         self.process.start(program)
