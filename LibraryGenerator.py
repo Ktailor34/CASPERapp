@@ -9,7 +9,7 @@ class Library(QtWidgets.QDialog):
 
     def __init__(self):
         super(Library, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'library_prompt.ui'), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'library_prompt.ui'), self)
         self.library_name = ""
 
         self.Targets = list()  # List of targets that contain information to be printed to the .csv file

@@ -17,13 +17,13 @@ def iter_except(function, exception):
 class NewGenome(QtWidgets.QMainWindow):
     def __init__(self, info_path):
         super(NewGenome, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'NewGenome.ui'), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'NewGenome.ui'), self)
         self.setWindowTitle('New Genome')
         self.k = KEGG()
         self.info_path = info_path
         #---Button Modifications---#
 
-        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "cas9image.png")))
         self.whatsthisButton.clicked.connect(self.whatsthisclicked)
         self.KeggSearchButton.clicked.connect(self.updatekegglist)
         self.resetButton.clicked.connect(self.reset)
@@ -123,7 +123,7 @@ class NewGenome(QtWidgets.QMainWindow):
         self.JobsQueueBox.setPlainText(self.JobsQueueBox.toPlainText()+nxtLine+myjob.name)
 
     def fillEndo(self):
-        f = open(os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo"))
+        f = open(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "CASPERinfo"))
         while True:
             line = f.readline()
             if line.startswith('ENDONUCLEASES'):
@@ -239,7 +239,7 @@ class NewGenome(QtWidgets.QMainWindow):
 
         # Top layer for loop to go through all of the jobs in the queue:
         job = self.JobsQueue[0]
-        program = '"' + os.path.join(os.path.dirname(sys.argv[0]), 'Casper_Seq_Finder" ')
+        program = '"' + os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'Casper_Seq_Finder" ')
         self.JobInProgress.setText(job.name)
         self.process.readyReadStandardOutput.connect(partial(output_stdout, self.process))
         program += job.get_arguments()
@@ -407,7 +407,7 @@ class CasperJob:
 
 
             cmd += '"' + db_location + "/" + '" '
-            cmd += '"' + os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo") + '" '
+            cmd += '"' + os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "CASPERinfo") + '" '
 
         cmd += '"' + ref + '" '
         cmd += '"' + self.organism_name + '" '
@@ -435,7 +435,7 @@ class CasperJob:
             ret_array.append("FALSE")
 
         ret_array.append(GlobalSettings.CSPR_DB + "/")
-        ret_array.append(os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo"))
+        ret_array.append(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "CASPERinfo"))
         ret_array.append(self.reference_file)
 
         ret_array.append(self.organism_name)

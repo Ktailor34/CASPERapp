@@ -16,8 +16,8 @@ class Multitargeting(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
 
         super(Multitargeting, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'multitargetingwindow.ui'), self)
-        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'multitargetingwindow.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "cas9image.png")))
         # Storage containers for the repeats and seed sequences
         self.sq=SeqTranslate()  # SeqTranslate object used in class
 

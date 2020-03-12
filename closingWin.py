@@ -14,9 +14,9 @@ class closingWindow(QtWidgets.QDialog):
     def __init__(self):
         # qt stuff
         super(closingWindow, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), "closingWindow.ui"), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "closingWindow.ui"), self)
         self.setWindowTitle("Choose which files to keep or delete")
-        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "cas9image.png")))
 
         # button connections
         self.submit_button.clicked.connect(self.submit_and_close)

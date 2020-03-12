@@ -1,20 +1,29 @@
 from PyQt5 import QtWidgets, Qt, QtGui, QtCore, uic
 import GlobalSettings
-import os, sys
+import os
 from CSPRparser import CSPRparser
 import Algorithms
 from functools import partial
+from mpl_toolkits.mplot3d import axes3d
 import numpy as np
 from matplotlib_venn import venn3_unweighted
+import matplotlib.pyplot as plt
+import itertools
+from PyQt5.QtWidgets import *
+from matplotlib.backends.backend_qt5agg import FigureCanvas
+from matplotlib_venn import venn3_unweighted
+import matplotlib.pyplot as plt
 import show_nams_ui
 import show_names2_ui
+import sys
+from statistics import mode
 
 
 class Pop_Analysis(QtWidgets.QMainWindow):
     def __init__(self):
         super(Pop_Analysis, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'populationanalysis.ui'), self)
-        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'populationanalysis.ui'), self)
+        self.setWindowIcon(QtGui.QIcon(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "cas9image.png")))
         self.goBackButton.clicked.connect(self.go_back)
         self.analyze_button.clicked.connect(self.pre_analyze)
         self.clear_Button.clicked.connect(self.clear)
@@ -24,7 +33,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         self.Endos = dict()
         self.fna_files = dict()
         self.cspr_files = {}
-        self.sq=Algorithms.SeqTranslate()
+        self.sq = Algorithms.SeqTranslate()
         self.ref_para_list = list()
         self.mode = 0
         self.find_locs_button.clicked.connect(self.find_locations)
@@ -37,8 +46,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         self.name_form = show_nams_ui.show_names_table()
         self.name_form2 = show_names2_ui.show_names_table2()
 
-
-        #orgonaism table
+        # orgonaism table
         self.org_Table.setColumnCount(1)
         self.org_Table.setShowGrid(False)
         self.org_Table.setHorizontalHeaderLabels(["Organism"])
@@ -48,10 +56,12 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         self.org_Table.setSelectionMode(QtWidgets.QAbstractItemView.MultiSelection)
         self.org_Table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
 
-        #top right table
+        # top right table
         self.table2.setColumnCount(9)
         self.table2.setShowGrid(False)
-        self.table2.setHorizontalHeaderLabels(["Seed","% Coverage","Total Repeats","Avg. Repeats/Chromosome", "Consensus Sequence", "% Consensus", "Score","PAM", "Strand"])
+        self.table2.setHorizontalHeaderLabels(
+            ["Seed", "% Coverage", "Total Repeats", "Avg. Repeats/Chromosome", "Consensus Sequence", "% Consensus",
+             "Score", "PAM", "Strand"])
         self.table2.horizontalHeader().setSectionsClickable(True)
         self.table2.horizontalHeader().sectionClicked.connect(self.table2_sorting)
         self.table2.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
@@ -60,7 +70,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         self.table2.setSelectionMode(QtWidgets.QAbstractItemView.MultiSelection)
         self.table2.resizeColumnsToContents()
 
-        #Finder table
+        # Finder table
         self.loc_finder_table.setColumnCount(5)
         self.loc_finder_table.setShowGrid(False)
         self.loc_finder_table.setHorizontalHeaderLabels(["Seed ID", "Sequence", "Organism", "Chromosome", "Location"])
@@ -79,7 +89,8 @@ class Pop_Analysis(QtWidgets.QMainWindow):
 
         self.total_org_number = 0
 
-        self.switcher_table2 = [1,1,1,1,1,1,1,1,1]  # for keeping track of where we are in the sorting clicking for each column
+        self.switcher_table2 = [1, 1, 1, 1, 1, 1, 1, 1,
+                                1]  # for keeping track of where we are in the sorting clicking for each column
         self.switcher_loc_table = [1, 1, 1, 1, 1]
 
     def launch_ncbi_seacher(self):
@@ -90,7 +101,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
     def launch_chrom_selector(self):
         GlobalSettings.mainWindow.cspr_selector.launch(self.cspr_files)
 
-    def launch(self,path):
+    def launch(self, path):
         os.chdir(path)
         self.directory = path
         self.get_data()
@@ -107,11 +118,10 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         org_chrom_num = list()
         tempD = dict()
 
-
         # error checking
         if len(selectedList) == 0:
             QtWidgets.QMessageBox.question(self, "Error", "Please select at least 1 seed to find locations of.",
-                                                QtWidgets.QMessageBox.Ok)
+                                           QtWidgets.QMessageBox.Ok)
             self.loc_finder_table.setRowCount(0)
             return
 
@@ -122,7 +132,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             if item[0] not in tempD:
                 if counter != 0:
                     org_chrom_num.append(counter)
-                
+
                 counter = 1
                 tempD[item[0]] = org_index
                 org_index += 1
@@ -169,7 +179,6 @@ class Pop_Analysis(QtWidgets.QMainWindow):
                     tableIndex += 1
 
         self.loc_finder_table.resizeColumnsToContents()
-
 
         # this function builds the Select Organisms table
 
@@ -241,17 +250,20 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         self.org_Table.resizeColumnsToContents()
 
         self.fillEndo()
-        #self.changeEndos()
+        # self.changeEndos()
 
     # this function opens CASPERinfo and builds the dropdown menu of selectable endonucleases
     def fillEndo(self):
-        f = open(os.path.join(os.path.dirname(sys.argv[0]), "CASPERinfo"))
+        if GlobalSettings.OPERATING_SYSTEM_ID == "Windows":
+            f = open(GlobalSettings.appdir + "\\CASPERinfo")
+        else:
+            f = open(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'CASPERinfo'))
         while True:
             line = f.readline()
             if line.startswith('ENDONUCLEASES'):
                 while True:
                     line = f.readline()
-                    if(line[0]=="-"):
+                    if (line[0] == "-"):
                         break
                     line_tokened = line.split(";")
                     endo = line_tokened[0]
@@ -268,7 +280,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         f.close()
         self.endoBox.addItem("None Selected")
         self.endoBox.addItems(self.Endos.keys())
-        #self.endoBox.currentIndexChanged.connect(self.changeEndos)
+        # self.endoBox.currentIndexChanged.connect(self.changeEndos)
 
     # this function displays all of the organisms of which the user has that endo in their DB
     def changeEndos(self):
@@ -278,9 +290,9 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         index = 0
         for keys in self.cspr_files.keys():
             filename = str(self.cspr_files[keys])
-            endo = filename[filename.find("_")+1:]
-            endo = endo.replace(".cspr","")
-            if(endo == endo_box or endo_box == "None"):
+            endo = filename[filename.find("_") + 1:]
+            endo = endo.replace(".cspr", "")
+            if (endo == endo_box or endo_box == "None"):
                 self.org_Table.setRowCount(index + 1)
                 name = QtWidgets.QTableWidgetItem(str(keys))
                 self.org_Table.setItem(index, 0, name)
@@ -296,7 +308,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             # error check
             if len(selectedList) == 0 or len(selectedList) > 1:
                 QtWidgets.QMessageBox.question(self, "Error", "Please select no more than 1 CSPR file for analysis.",
-                                                QtWidgets.QMessageBox.Ok)
+                                               QtWidgets.QMessageBox.Ok)
                 return
 
             # get the cspr_file name, the endochoice, and call the popParser
@@ -306,7 +318,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             endoChoice = cspr_file_name.split('_')[1].split('.')[0]
             # call the parser and the call fill_data
             cspr_file_name = GlobalSettings.CSPR_DB + '/' + cspr_file_name
-            self.total_org_number, self.ref_para_list =  self.parser.popParser(cspr_file_name, endoChoice)
+            self.total_org_number, self.ref_para_list = self.parser.popParser(cspr_file_name, endoChoice)
             self.fill_data(endoChoice)
         # if the user is wanting to go with creating a new meta genomic cspr file
         else:
@@ -317,16 +329,17 @@ class Pop_Analysis(QtWidgets.QMainWindow):
                 # rules for selecting FNA/Fasta files
                 # check to make sure that the user selected at least 2 organisms, and 1 endonuclease
                 if len(selectedList) < 1 or self.endoBox.currentText() == 'None Selected':
-                    QtWidgets.QMessageBox.question(self, "Nothing Seleted", "No items selected. Please select at least 1 organism, and only 1 endonuclease",
-                                                QtWidgets.QMessageBox.Ok)
+                    QtWidgets.QMessageBox.question(self, "Nothing Seleted",
+                                                   "No items selected. Please select at least 1 organism, and only 1 endonuclease",
+                                                   QtWidgets.QMessageBox.Ok)
                     return
                 if len(selectedList) == 1:
                     error = QtWidgets.QMessageBox.question(self, "Only 1 Organism Selected",
-                                                            "Population Analysis works with multiple organisms, or a meta genome. If the file selected it not a meta genome, the program may not function correctly.\n\n"
-                                                            "Do you wish to continue?",
-                                                            QtWidgets.QMessageBox.Yes |
-                                                            QtWidgets.QMessageBox.No,
-                                                            QtWidgets.QMessageBox.No)
+                                                           "Population Analysis works with multiple organisms, or a meta genome. If the file selected it not a meta genome, the program may not function correctly.\n\n"
+                                                           "Do you wish to continue?",
+                                                           QtWidgets.QMessageBox.Yes |
+                                                           QtWidgets.QMessageBox.No,
+                                                           QtWidgets.QMessageBox.No)
                     if (error == QtWidgets.QMessageBox.No):
                         return
 
@@ -337,12 +350,14 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             # rules for selecting cspr files
             elif self.meta_genomic_cspr_checkbox.isChecked():
                 if len(selectedList) == 0:
-                    QtWidgets.QMessageBox.question(self, "Nothing Seleted", "No items selected. Please select one meta genome for Population Analysis.",
-                                                QtWidgets.QMessageBox.Ok)
+                    QtWidgets.QMessageBox.question(self, "Nothing Seleted",
+                                                   "No items selected. Please select one meta genome for Population Analysis.",
+                                                   QtWidgets.QMessageBox.Ok)
                     return
                 elif len(selectedList) > 1:
-                    QtWidgets.QMessageBox.question(self, "Too many Selected", "Only 1 meta genomic CSPR file is allowed to be selected",
-                                                QtWidgets.QMessageBox.Ok)
+                    QtWidgets.QMessageBox.question(self, "Too many Selected",
+                                                   "Only 1 meta genomic CSPR file is allowed to be selected",
+                                                   QtWidgets.QMessageBox.Ok)
                     return
 
     # this function calculates the percentConserved for the table
@@ -402,7 +417,7 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             avgTab.setData(QtCore.Qt.EditRole, rounded)
             self.table2.setItem(index, 3, avgTab)
 
-            #loop through the tuples for each seed
+            # loop through the tuples for each seed
             sequences = []
             for tuples in self.parser.popData[seeds]:
                 sequences.append(tuples[3])
@@ -431,7 +446,6 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             consensus_perc = QtWidgets.QTableWidgetItem()
             consensus_perc.setData(QtCore.Qt.EditRole, consensus_percentage)
             self.table2.setItem(index, 5, consensus_perc)
-
 
             index += 1
         self.table2.resizeColumnsToContents()
@@ -488,75 +502,72 @@ class Pop_Analysis(QtWidgets.QMainWindow):
         # now draw
         self.pop_analysis_repeats_graph.canvas.draw()
 
-    #this function is for the 3D bar graph
+    # this function is for the 3D bar graph
     def plot_3D_graph(self, endoChoice):
+        if (self.total_org_number > 2):
+            rows, cols = (self.total_org_number, self.total_org_number)
 
-        rows, cols = (self.total_org_number, self.total_org_number)
-        arr = [[0 for i in range(cols)] for j in range(rows)]
+            arr = [[0 for i in range(cols)] for j in range(rows)]
 
-        x3 = []
-        y3 = []
-        z3 = np.zeros(int((self.total_org_number*(self.total_org_number-1))/2))
-        dz = []
-        self.names = []
-        dx = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
-        dy = np.ones(int((self.total_org_number*(self.total_org_number-1))/2))
+            x3 = []
+            y3 = []
+            z3 = np.zeros(int((self.total_org_number * (self.total_org_number - 1)) / 2))
+            dz = []
+            self.names = []
+            dx = np.ones(int((self.total_org_number * (self.total_org_number - 1)) / 2))
+            dy = np.ones(int((self.total_org_number * (self.total_org_number - 1)) / 2))
 
-        for keys in self.parser.popData:
-            for items in self.parser.popData[keys]:
-                if items[0] not in self.names:
-                    self.names.append(items[0])
+            for keys in self.parser.popData:
+                for items in self.parser.popData[keys]:
+                    if items[0] not in self.names:
+                        self.names.append(items[0])
 
-        for keys in self.parser.popData:
-            temp_names = []
-            for items in self.parser.popData[keys]:
-                if items[0] not in temp_names:
-                    temp_names.append(items[0])
+            for keys in self.parser.popData:
+                temp_names = []
+                for items in self.parser.popData[keys]:
+                    if items[0] not in temp_names:
+                        temp_names.append(items[0])
 
+                if len(temp_names) >= 2:
+                    for i in range(len(temp_names) - 1):
+                        j = i + 1
+                        while j != len(temp_names):
+                            arr[self.names.index(temp_names[i])][self.names.index(temp_names[j])] += 1
+                            arr[self.names.index(temp_names[j])][self.names.index(temp_names[i])] += 1
+                            j += 1
 
-            if len(temp_names) >= 2:
-                for i in range(len(temp_names)-1):
-                    j = i+1
-                    while j != len(temp_names):
-                        arr[self.names.index(temp_names[i])][self.names.index(temp_names[j])] += 1
-                        arr[self.names.index(temp_names[j])][self.names.index(temp_names[i])] += 1
-                        j+=1
+            for j in range(cols):
+                i = len(self.names) - 1
+                while i != j:
+                    x3.append(i)
+                    y3.append(j)
+                    dz.append(arr[i][j])
+                    i -= 1
 
+            self.pop_analysis_3dgraph.canvas.axes.clear()
+            self.pop_analysis_3dgraph.canvas.axes.bar3d(x3, y3, z3, dx, dy, dz)
 
-        for j in range(cols):
-            i = len(self.names)-1
-            while i != j:
-                x3.append(i)
-                y3.append(j)
-                dz.append(arr[i][j])
-                i -= 1
+            new_names = []
 
+            for n in range(len(self.names)):
+                new_names.append(n)
 
+            self.pop_analysis_3dgraph.canvas.axes.set_xlabel('x')
+            self.pop_analysis_3dgraph.canvas.axes.set_ylabel('y')
+            self.pop_analysis_3dgraph.canvas.axes.set_zlabel('z')
 
-        self.pop_analysis_3dgraph.canvas.axes.clear()
-        self.pop_analysis_3dgraph.canvas.axes.bar3d(x3,y3,z3,dx,dy,dz)
+            self.pop_analysis_3dgraph.canvas.axes.set_xticks(np.arange(1, self.total_org_number + 1, 1))
+            self.pop_analysis_3dgraph.canvas.axes.set_yticks(np.arange(0, self.total_org_number, 1))
 
-        new_names = []
+            self.pop_analysis_3dgraph.canvas.axes.tick_params(labelsize=8)
+            self.pop_analysis_3dgraph.canvas.axes.set_xticklabels(new_names, rotation=45)
+            self.pop_analysis_3dgraph.canvas.axes.set_yticklabels(new_names, rotation=-45)
 
-        for n in range(len(self.names)):
-            new_names.append(n)
-
-        self.pop_analysis_3dgraph.canvas.axes.set_xlabel('x')
-        self.pop_analysis_3dgraph.canvas.axes.set_ylabel('y')
-        self.pop_analysis_3dgraph.canvas.axes.set_zlabel('z')
-
-        self.pop_analysis_3dgraph.canvas.axes.set_xticks(np.arange(1, self.total_org_number+1, 1))
-        self.pop_analysis_3dgraph.canvas.axes.set_yticks(np.arange(0, self.total_org_number, 1))
-
-        self.pop_analysis_3dgraph.canvas.axes.tick_params(labelsize=8)
-        self.pop_analysis_3dgraph.canvas.axes.set_xticklabels(new_names, rotation=45)
-        self.pop_analysis_3dgraph.canvas.axes.set_yticklabels(new_names, rotation=-45)
-
-        self.pop_analysis_3dgraph.canvas.draw()
+            self.pop_analysis_3dgraph.canvas.draw()
 
     def plot_venn(self):
         self.pop_analysis_venn_diagram.canvas.figure.clf()
-        #self.pop_analysis_venn_diagram.canvas = FigureCanvas(plt.figure(figsize=(7.5,7.5)))
+        # self.pop_analysis_venn_diagram.canvas = FigureCanvas(plt.figure(figsize=(7.5,7.5)))
 
         rows, cols = (self.total_org_number, self.total_org_number)
         arr = [[0 for i in range(cols)] for j in range(rows)]
@@ -578,18 +589,18 @@ class Pop_Analysis(QtWidgets.QMainWindow):
                         temp_names.append(items[0])
 
                 if len(temp_names) >= 2:
-                    for i in range(len(temp_names)-1):
-                        j = i+1
+                    for i in range(len(temp_names) - 1):
+                        j = i + 1
                         while j != len(temp_names):
                             arr[self.names_venn.index(temp_names[i])][self.names_venn.index(temp_names[j])] += 1
                             arr[self.names_venn.index(temp_names[j])][self.names_venn.index(temp_names[i])] += 1
-                            j+=1
+                            j += 1
                 else:
                     if temp_names[0] == 'Corynebacterium tuberculostearicum SK141 contig00004':
                         counter += 1
                     singles[self.names_venn.index(temp_names[0])] += 1
 
-            #all 3 orgs
+            # all 3 orgs
             for keys in self.parser.popData:
                 temp_names = []
                 for items in self.parser.popData[keys]:
@@ -598,9 +609,8 @@ class Pop_Analysis(QtWidgets.QMainWindow):
                 if all(x in temp_names for x in [self.names_venn[0], self.names_venn[1], self.names_venn[2]]):
                     all_3 += 1
 
-
             venn3_unweighted(subsets=(singles[0], singles[1], arr[0][1], singles[2], arr[0][2],
-                                                                 arr[1][1], all_3), set_labels=('0', '1', '2'))
+                                      arr[1][1], all_3), set_labels=('0', '1', '2'))
 
             self.pop_analysis_venn_diagram.canvas.draw()
         else:
@@ -610,33 +620,33 @@ class Pop_Analysis(QtWidgets.QMainWindow):
             # del self.pop_analysis_venn_diagram.canvas.axes
             # self.pop_analysis_venn_diagram.canvas.draw()
 
-            #self.pop_analysis_venn_diagram.canvas.axes = venn3_unweighted(
-               #subsets=('null', 'null', 'null', 'null', 'null', 'null', 'null'), set_labels=('Org. 1', 'Org. 2', 'Org. 3'))
+            # self.pop_analysis_venn_diagram.canvas.axes = venn3_unweighted(
+            # subsets=('null', 'null', 'null', 'null', 'null', 'null', 'null'), set_labels=('Org. 1', 'Org. 2', 'Org. 3'))
 
     def show_names_func(self):
-        #print(self.names)
+        # print(self.names)
         self.name_form.fill_table(self.names)
         self.name_form.show()
 
     def show_names_func2(self):
-        #print(self.names)
+        # print(self.names)
         if len(self.names_venn) >= 3:
             self.name_form2.fill_table(self.names_venn[0:3])
             self.name_form2.show()
         else:
             self.name_form2.name_table2.setRowCount(0)
 
-    def order(self,data_par):
+    def order(self, data_par):
         data = dict(data_par)
-        data2  = []
-        while len(data)>0:
-            max=0
+        data2 = []
+        while len(data) > 0:
+            max = 0
             for item in data:
-                if item>max:
-                    max=item
+                if item > max:
+                    max = item
             data2.append(max)
-            if len(data2) ==1:
-                self.max_repeats =max
+            if len(data2) == 1:
+                self.max_repeats = max
             del data[max]
         return data2
 
@@ -668,11 +678,10 @@ class Pop_Analysis(QtWidgets.QMainWindow):
     # sorting for location table: IE table in bottom right
     def loc_table_sorter(self, logicalIndex):
         self.switcher_loc_table[logicalIndex] *= -1
-        if(self.switcher_loc_table[logicalIndex] == -1):
+        if (self.switcher_loc_table[logicalIndex] == -1):
             self.loc_finder_table.sortItems(logicalIndex, QtCore.Qt.DescendingOrder)
         else:
             self.loc_finder_table.sortItems(logicalIndex, QtCore.Qt.AscendingOrder)
-
 
 
 ###############################################################################
@@ -685,7 +694,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
     def __init__(self):
         # Qt init stuff
         super(fna_and_cspr_combiner, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), "pop_analysis_fna_combiner.ui"), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "pop_analysis_fna_combiner.ui"), self)
         self.sequencer_prog_bar.setValue(0)
 
         # button connections
@@ -722,7 +731,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
                                            "Please input an Organism Name, an Organism Code, and the number of Organisms you are analyzing.",
                                            QtWidgets.QMessageBox.Ok)
             return
-        
+
         # make sure the user inputs an integer for the number of organisms
         if not self.orgNum_lineEdit.text().isdigit():
             QtWidgets.QMessageBox.question(self, "Error",
@@ -761,7 +770,6 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         self.process = QtCore.QProcess()
         self.show()
 
-
     # this function takes a list of file paths, which are FNA or Fasta files, and combines them into one file
     # this function also builds a parallel/reference list of the chromosomes
     def combine_fna_files(self):
@@ -776,7 +784,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
             file_stream = open(file, 'r')
 
             buf = file_stream.readline()
-            
+
             spaceIndex = buf.find(' ') + 1
             commaIndex = buf.find(',')
             orgName = buf[spaceIndex:commaIndex]
@@ -797,50 +805,59 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
             file_stream.close()
         out_stream.close()
 
-
-
     # this function builds a new cspr file from the combined FNA file
     # very similar to New Genome
     def build_new_cspr_file(self):
         self.num_chromo_next = False
         self.num_chromo = 0
+
         # this function reads output. Just used to populate the progress bar
         def output_stdout(p):
             line = str(p.readAll())
             line = line[2:]
             line = line[:len(line) - 1]
-            for lines in filter(None, line.split(r'\r\n')):
+            line = line.strip('\\n')
+            line = line.strip('\n')
+            for lines in filter(None, line.split(r'\n')):
+                lines = lines.strip('\n')
+                lines = lines.strip('\\n')
+                print(lines)
                 if (lines == 'Finished reading in the genome file.'):
                     self.num_chromo_next = True
                 elif (self.num_chromo_next == True):
+                    lines = lines.strip('\\n')
                     self.num_chromo_next = False
                     self.num_chromo = int(lines)
                 elif (lines.find('Chromosome') != -1 and lines.find('complete.') != -1):
                     temp = lines
                     temp = temp.replace('Chromosome ', '')
                     temp = temp.replace(' complete.', '')
+                    temp = temp.strip('\n')
                     if (int(temp) == self.num_chromo):
                         self.sequencer_prog_bar.setValue(99)
                     else:
                         self.sequencer_prog_bar.setValue(int(temp) / self.num_chromo * 100)
                 elif (lines == 'Finished Creating File.'):
                     self.sequencer_prog_bar.setValue(100)
+
         # this function will end up doing stuff when the process is finished.
         def finished():
             self.proc_running = False
 
             if self.cancelled == False:
                 # get the file name
-                cspr_file_name = GlobalSettings.CSPR_DB + '/' + self.org_code_line_edit.text() + '_' + GlobalSettings.pop_Analysis.endoBox.currentText().split(' ')[0] + '.cspr'
+                cspr_file_name = GlobalSettings.CSPR_DB + '/' + self.org_code_line_edit.text() + '_' + \
+                                 GlobalSettings.pop_Analysis.endoBox.currentText().split(' ')[0] + '.cspr'
                 self.process.kill()
                 endoChoice = GlobalSettings.pop_Analysis.endoBox.currentText().split(' ')[0]
-                GlobalSettings.pop_Analysis.total_org_number, GlobalSettings.pop_Analysis.ref_para_list = GlobalSettings.pop_Analysis.parser.popParser(cspr_file_name, endoChoice)
+                GlobalSettings.pop_Analysis.total_org_number, GlobalSettings.pop_Analysis.ref_para_list = GlobalSettings.pop_Analysis.parser.popParser(
+                    cspr_file_name, endoChoice)
                 GlobalSettings.pop_Analysis.fill_data(endoChoice)
             os.remove(self.combined_fna_file)
             self.cancelled = False
             self.cancel_function()
 
-        #--------------getting the arugments---------------------------------
+        # --------------getting the arugments---------------------------------
         # get the file path to the combined fna file
         fna_file_path = self.combined_fna_file
         path_to_fna = fna_file_path
@@ -858,7 +875,7 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         # get the output folder location
         output_location = GlobalSettings.CSPR_DB
         # get the path to CASPERinfo
-        path_to_info = os.path.join(os.path.dirname(sys.argv[0]), 'CASPERinfo')
+        path_to_info = os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'CASPERinfo')
         # make org name something that will make more sense, this is just for testing right now
         orgName = self.orgName_line_edit.text() + '  , (meta), ' + self.orgNum_lineEdit.text()
         # get the seed and RNA length, based on the endo choice
@@ -869,29 +886,28 @@ class fna_and_cspr_combiner(QtWidgets.QDialog):
         # get the notes here
         for i in range(len(self.ref_para_list)):
             secondCode = secondCode + self.ref_para_list[i][0] + ',' + self.ref_para_list[i][1] + '|'
-            secondCode = secondCode.replace('\n', '') 
-        #------------------done getting the arguments------------------------------
+            secondCode = secondCode.replace('\n', '')
+            # ------------------done getting the arguments------------------------------
 
         # get the program path
-        program = '"' + os.path.join(os.path.dirname(sys.argv[0]),'Casper_Seq_Finder_') + '" '
+        program = '"' + os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'Casper_Seq_Finder') + '" '
 
         # compile all of the arguments into one line
-        args =  '"' + endo_choice + '" '
+        args = '"' + endo_choice + '" '
         args = args + '"' + pam + '" '
         args = args + '"' + code + '" '
         args = args + str(pamdir) + ' '
-        args = args + '"' + output_location + '" '
+        args = args + '"' + output_location + '/" '
         args = args + '"' + path_to_info + '" '
         args = args + '"' + path_to_fna + '" '
         args = args + '"' + orgName + '" '
         args = args + gRNA_length + ' '
         args = args + seed_length + ' '
         args = args + '"' + secondCode + '"'
-
+        print(args)
         # combine the program and arguments into 1
         program = program + args
 
-        print(program)
         self.process.readyReadStandardOutput.connect(partial(output_stdout, self.process))
         self.proc_running = True
         self.process.start(program)

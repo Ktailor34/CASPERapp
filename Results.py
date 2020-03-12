@@ -24,7 +24,7 @@ class Results(QtWidgets.QMainWindow):
 
     def __init__(self, parent=None):
         super(Results, self).__init__(parent)
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), 'resultsWindow.ui'), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'resultsWindow.ui'), self)
 
         self.setWindowTitle('Results')
         self.geneViewer.setReadOnly(True)
@@ -774,7 +774,7 @@ class Results(QtWidgets.QMainWindow):
     #linked to when the user pushes tools->off target analysis
     def Off_Target_Analysis(self):
         #build temp file for offtarget to read from
-        f = open(os.path.join(os.path.dirname(sys.argv[0]), 'OffTargetFolder') + '/temp.txt','w+')
+        f = open(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'OffTargetFolder') + '/temp.txt','w+')
         self.OTA.clear()
         for row in range(self.targetTable.rowCount()):
             if(self.targetTable.cellWidget(row,6).isChecked()):
@@ -1005,9 +1005,9 @@ class geneViewerSettings(QtWidgets.QDialog):
     def __init__(self):
         # Qt init stuff
         super(geneViewerSettings, self).__init__()
-        uic.loadUi(os.path.join(os.path.dirname(sys.argv[0]), "geneViewerSettings.ui"), self)
+        uic.loadUi(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "geneViewerSettings.ui"), self)
         self.setWindowTitle("Change Gene Viewer Settings")
-        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(sys.argv[0]), "cas9image.png")))
+        self.setWindowIcon(Qt.QIcon(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), "cas9image.png")))
 
         # button connections
         self.kegg_radio_button.clicked.connect(self.change_file_type)
