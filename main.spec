@@ -45,7 +45,8 @@ a = Analysis(['main.py'],
 				'pop_analysis_3dgraph',
 				'pop_analysis_repeats_graph',
 				'pop_analysis_venn_diagram',
-				'numpy.core._dtypes_ctypes'
+				'numpy.core._dtypes_ctypes',
+				'pkg_resources.py2_warn'
 			],
              hookspath=[],
              runtime_hooks=[],

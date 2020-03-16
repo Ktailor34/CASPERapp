@@ -310,6 +310,8 @@ class CMainWindow(QtWidgets.QMainWindow):
 
         #self.newGenome.process.finished.connect(self.update_dropdowns)
         self.newGenome.contButton.clicked.connect(self.update_dropdowns)
+        menu = self.menuBar()
+        menu.setNativeMenuBar(False)
 
     def endo_Changed(self):
         i=3
@@ -1512,7 +1514,6 @@ class StartupWindow(QtWidgets.QDialog):
 if __name__ == '__main__':
     #enable DPI scaling
     GlobalSettings.appdir = os.getcwd() #used as global constant
-
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 
     app = Qt.QApplication(sys.argv)
