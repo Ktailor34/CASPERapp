@@ -383,14 +383,13 @@
      <x>0</x>
      <y>0</y>
      <width>1303</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionUpload_Organism"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
