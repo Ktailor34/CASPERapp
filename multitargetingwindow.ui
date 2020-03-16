@@ -396,7 +396,6 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionUpload_Organism"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
