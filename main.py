@@ -310,6 +310,8 @@ class CMainWindow(QtWidgets.QMainWindow):
 
         #self.newGenome.process.finished.connect(self.update_dropdowns)
         self.newGenome.contButton.clicked.connect(self.update_dropdowns)
+        menu = self.menuBar()
+        menu.setNativeMenuBar(False)
 
     def endo_Changed(self):
         i=3
