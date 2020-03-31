@@ -292,7 +292,9 @@ class CMainWindow(QtWidgets.QMainWindow):
         self.actionPopulation_Analysis.triggered.connect(self.changeto_population_Analysis)
         self.actionNCBI.triggered.connect(self.open_ncbi_web_page)
         self.actionCasper2.triggered.connect(self.open_casper2_web_page)
-        # --- Setup for Gene Entry Field --- #
+        self.actionNCBI_BLAST.triggered.connect(self.open_ncbi_blast_web_page)
+
+	# --- Setup for Gene Entry Field --- #
         self.geneEntryField.setPlainText("Example Inputs: \n"
                                                "Gene (LocusID): YOL086C  *for Saccharomyces Cerevisiae ADH1 gene* \n"
                                                "Position: chromosome,start,stop\n chromosome,start,stop...\n"
@@ -1328,6 +1330,9 @@ class CMainWindow(QtWidgets.QMainWindow):
         GlobalSettings.pop_Analysis.show()
         GlobalSettings.mainWindow.hide()
 
+    def open_ncbi_blast_web_page(self):
+        webbrowser.open('https://blast.ncbi.nlm.nih.gov/Blast.cgi', new=2)
+    
     def open_ncbi_web_page(self):
         webbrowser.open('https://www.ncbi.nlm.nih.gov/', new=2)
 
