@@ -10,6 +10,7 @@ from closingWin import closingWindow
 
 from Results import Results, geneViewerSettings
 from NewGenome import NewGenome, NCBI_Search_File
+from NewEndonuclease import NewEndonuclease
 
 import webbrowser
 import requests
@@ -265,6 +266,7 @@ class CMainWindow(QtWidgets.QMainWindow):
         self.Annotation_Ownfile.clicked.connect(self.change_annotation)
         self.NCBI_Select.clicked.connect(self.change_annotation)
         self.actionUpload_New_Genome.triggered.connect(self.launch_newGenome)
+        self.actionUpload_New_Endonuclease.triggered.connect(self.launch_newEndonuclease)        
         self.Add_Orgo_Button.clicked.connect(self.add_Orgo)
         self.Remove_Organism_Button.clicked.connect(self.remove_Orgo)
         self.endoChoice.currentIndexChanged.connect(self.endo_Changed)
@@ -293,6 +295,7 @@ class CMainWindow(QtWidgets.QMainWindow):
         self.actionNCBI.triggered.connect(self.open_ncbi_web_page)
         self.actionCasper2.triggered.connect(self.open_casper2_web_page)
         self.actionNCBI_BLAST.triggered.connect(self.open_ncbi_blast_web_page)
+        #self.actionUpload_New_Endonuclease.triggered.connect(self.open_new_endonuclease_web_page)
 
 	# --- Setup for Gene Entry Field --- #
         self.geneEntryField.setPlainText("Example Inputs: \n"
@@ -305,6 +308,7 @@ class CMainWindow(QtWidgets.QMainWindow):
         #show functionalities on window
         ############################self.view_my_results = Results()
         self.newGenome = NewGenome(info_path)
+        self.newEndonuclease = NewEndonuclease()
         self.ncbi_search_dialog = NCBI_Search_File()
         self.CoTargeting = CoTargeting(info_path)
         self.Results = Results()
@@ -871,6 +875,9 @@ class CMainWindow(QtWidgets.QMainWindow):
     def launch_newGenome(self):
        self.newGenome.show()
 
+    def launch_newEndonuclease(self):
+       self.newEndonuclease.show()
+
     # this function does the same stuff that the other collect_table_data does, but works with the other types of files
     def collect_table_data_nonkegg(self):
         # start out the same as the other collect_table_data
@@ -1339,6 +1346,16 @@ class CMainWindow(QtWidgets.QMainWindow):
     def open_casper2_web_page(self):
         webbrowser.open('http://casper2.org/', new=2)
 
+    #def open_endonuclease_web_page(self):
+       # class Ui(QtWidgets.QMainWindow):
+        #    def __init__(self):
+         #       super(Ui, self).__init__()
+          #      uic.loadUi('basic.ui', self)
+           #     self.show()
+       # app = QtWidgets.QApplication(sys.argv)
+       # window = Ui()
+       # app.exec_()
+
     @QtCore.pyqtSlot()
     def view_results(self):
         self.hide()
@@ -1445,6 +1462,7 @@ class StartupWindow(QtWidgets.QDialog):
                 GlobalSettings.CASPER_FOLDER_LOCATION = self.info_path
                 self.re_write_dir()
                 GlobalSettings.mainWindow.launch_newGenome()
+                GlobalSettings.mainWindow.launch_newEndonuclease()
                 self.close()
             else:
                 QtWidgets.QMessageBox.question(self, "Not a directory", "The directory you selected does not exist.",
